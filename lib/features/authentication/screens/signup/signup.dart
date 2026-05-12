@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../../../utils/constants/sizes.dart';
+import '../../../../utils/constants/text_strings.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -12,7 +12,22 @@ class SignupScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
             padding: EdgeInsets.all(TSizes.defaultSpace),
-          child: Column(),
+          child: Column(
+            children: [
+              /// Title
+              Text(TTexts.signupTitle, style: Theme.of(context).textTheme.headlineMedium),
+              SizedBox(height: TSizes.spaceBtwSections),
+
+              /// Form
+              Form(child: Column(
+                children: [
+                  Row(
+
+                  )
+                ],
+              ))
+            ],
+          ),
         ),
       ),
     );
