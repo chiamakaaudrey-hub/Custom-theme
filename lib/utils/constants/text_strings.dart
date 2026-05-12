@@ -3,6 +3,9 @@
 class TTexts {
 
   // -- GLOBAL Texts
+  static String and = "and";
+  static String skip = "Skip";
+  static String done = "Done";
   static String submit = "Submit";
   static String aPppName = "T-Store";
   static String tContinue = "Continue";

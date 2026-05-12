@@ -25,13 +25,13 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             children: [
               /// Logo, Title & Sub-Title
-              TLoginHeader(dark: dark),
+              TLoginHeader(),
 
               /// Form
               TLoginForm(),
 
               /// Divider
-              TFormDivider(dividerText: TTexts.orSignInWith.capitalize!, dark: dark),
+              TFormDivider(dividerText: TTexts.orSignInWith.capitalize!),
               SizedBox(width: TSizes.spaceBtwSections),
 
               /// Footer

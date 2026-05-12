@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/string_extensions.dart';
+import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../utils/constants/colors.dart';
 import '../../utils/constants/text_strings.dart';
@@ -7,14 +8,14 @@ import '../../utils/constants/text_strings.dart';
 class TFormDivider extends StatelessWidget {
   const TFormDivider({
     super.key,
-    required this.dividerText, required this.dark,
+    required this.dividerText,
   });
 
   final String dividerText;
-  final bool dark;
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
