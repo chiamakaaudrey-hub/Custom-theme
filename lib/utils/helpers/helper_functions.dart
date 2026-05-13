@@ -28,7 +28,7 @@ class THelperFunctions {
     } else if (value == 'Yellow') {
       return Colors.yellow;
     } else if (value == 'Orange') {
-      return Colors.orange;
+      return Colors.deepOrange;
     } else if (value == 'Brown') {
       return Colors.brown;
     } else if (value == 'Teal') {
