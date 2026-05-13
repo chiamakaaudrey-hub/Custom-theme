@@ -48,7 +48,7 @@ class TTexts {
   static String forgetPasswordSubTitle = "Don't worry sometimes people can forget too, enter your email and we will send you a password reset link";
   static String changeYourPasswordTitle = "Password Reset Email Sent";
   static String changeYourPasswordSubTitle = "Your account security is our priority! We've sent you a secure link to safely change your password and keep your account protected.";
-  static String confirmEmail = "Verify your email address";
+  static String confirmEmail = "Verify your email address!";
   static String confirmEmailSubTitle = "Congratulations! Your Account Awaits: Verify your email to start shopping and experience a world of unrivaled deals and personalized offers.";
   static String emailNotReceivedMessage = "Didn't get the email? Check your junk/spam or resend it.";
   static String yourAccountCreatedTitle = "Your account successfully created!";

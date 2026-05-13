@@ -7,8 +7,8 @@ import 'package:t_store/features/authentication/screens/login/widgets/login_head
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
-import '../../../../common/widgets/form_divider.dart';
-import '../../../../common/widgets/social_buttons.dart';
+import '../../../../common/widgets/login_signup/form_divider.dart';
+import '../../../../common/widgets/login_signup/social_buttons.dart';
 import '../../../../utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
 
