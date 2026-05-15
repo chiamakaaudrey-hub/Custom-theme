@@ -24,4 +24,15 @@ import 'package:flutter/material.dart';
     static String deliveredEmailIllustration = "assets/images/animations/sammy-line-man-receives-a-mail.png";
     static String verifyIllustration = "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
 
+    // -- Category Icons
+    static String sportIcon = "assets/icons/categories/icons8-bowling-64.png";
+    static String clothIcon = "assets/icons/categories/icons8-tailors-dummy-64.png";
+    static String shoeIcon = "assets/icons/categories/icons8-shoes-64.png";
+    static String cosmeticsIcon = "assets/icons/categories/icons8-cosmetics-64.png";
+    static String animalIcon = "assets/icons/categories/icons8-dog-heart-64.png";
+    static String toyIcon = "assets/icons/categories/icons8-toy-car-50.png";
+    static String furnitureIcon = "assets/icons/categories/icons8-dining-chair-64.png";
+    static String jeweleryIcon = "assets/icons/categories/icons8-sparkling-diamond-64.png";
+    static String electronicsIcon = "assets/icons/categories/icons8-smartphone-64.png";
+
   }
