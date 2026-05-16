@@ -5,6 +5,8 @@ import 'package:t_store/features/shop/screens/home/widgets/home.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
+import 'features/shop/screens/store/store.dart';
+
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
 
@@ -40,8 +42,5 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
-  final screens = [HomeScreen(),
-  Container(color: Colors.blue),
-  Container(color: Colors.deepPurple),
-  Container(color: Colors.orange),];
+  final screens = [HomeScreen(), StoreScreen(), Container(color: Colors.deepPurple), Container(color: Colors.orange),];
 }

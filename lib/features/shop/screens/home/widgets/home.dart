@@ -43,8 +43,8 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(height: TSizes.spaceBtwSections),
 
                     /// Searchbar -- Tutorial [Section #3, Video #4]
-                    TSearchContainer(text: 'Search in Store'),
-                    SizedBox(height: TSizes.spaceBtwSections),
+                    TSearchContainer(text: 'Search in Store', padding: EdgeInsets.symmetric(horizontal: TSizes.defaultSpace)),
+                      SizedBox(height: TSizes.spaceBtwSections),
                     
                     /// Categories -- Tutorial [Section #3, Video #4]
                     Padding(padding: EdgeInsets.only(left: TSizes.defaultSpace),
@@ -58,7 +58,7 @@ class HomeScreen extends StatelessWidget {
                           /// -- Categories
                           THomeCategories(),
                       ],),),
-                  ],
+                    ],
                 ),
                 ),
             /// -- Body -- Tutorial [Section #3, Video #5]
@@ -69,6 +69,10 @@ class HomeScreen extends StatelessWidget {
                 /// -- Promo Slider -- Tutorial [Section #3, Video #6]
                 TPromoSlider(banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3]),
                 SizedBox(height: TSizes.spaceBtwSections),
+
+                /// -- Heading
+                TSectionHeading(title: 'Popular Products', onPressed: (){}),
+                SizedBox(height: TSizes.spaceBtwItems),
 
                 /// -- Popular Products -- Tutorial [Section #3, Video #7]
                 TGridLayout(itemCount: 2, itemBuilder: (_, index) => TProductCardVertical()),
