@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/curved_edges/curved_edges.dart';
+import 'package:t_store/common/widgets/layout/grid_layout.dart';
 import 'package:t_store/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/device/device_utility.dart';
@@ -14,7 +15,7 @@ import '../../../../../common/widgets/custom_shapes/containers/search_container.
 import '../../../../../common/widgets/custom_shapes/curved_edges/curved-edges-widget.dart';
 import '../../../../../common/widgets/image_text_widgets/vertical_image_text.dart';
 import '../../../../../common/widgets/images/t_rounded_image.dart';
-import '../../../../../common/widgets/product.cart/cart_menu_icon.dart';
+import '../../../../../common/widgets/products/product_cards/product_card_vertical.dart';
 import '../../../../../common/widgets/texts/section_heading.dart';
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
@@ -60,10 +61,19 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 ),
-            /// -- Body -- Tutorial [Section #3, Video #45
+            /// -- Body -- Tutorial [Section #3, Video #5]
             Padding(
               padding: EdgeInsets.all(TSizes.defaultSpace),
-              child: TPromoSlider(banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3]),
+              child: Column(
+              children: [
+                /// -- Promo Slider -- Tutorial [Section #3, Video #6]
+                TPromoSlider(banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3]),
+                SizedBox(height: TSizes.spaceBtwSections),
+
+                /// -- Popular Products -- Tutorial [Section #3, Video #7]
+                TGridLayout(itemCount: 2, itemBuilder: (_, index) => TProductCardVertical()),
+    ],
+    )
             )
           ],
         ),

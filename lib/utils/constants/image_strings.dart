@@ -41,4 +41,46 @@ import 'package:flutter/material.dart';
     static String promoBanner3 = "assets/images/banners/promo-banner-3.png";
     static String promoBanner4 = "assets/images/banners/promo-banner-4.png";
 
+    // Products
+    static String productImage1 = "assets/images/products/nike-shoes.png";
+    static String productImage2 = "assets/images/products/nike-shoes.png";
+    static String productImage3 = "assets/images/products/nike-shoes.png";
+    static String productImage4 = "assets/images/products/nike-shoes.png";
+    static String productImage5 = "assets/images/products/nike-shoes.png";
+    static String productImage6 = "assets/images/products/nike-shoes.png";
+    static String productImage7 = "assets/images/products/nike-shoes.png";
+    static String productImage8 = "assets/images/products/nike-shoes.png";
+    static String productImage9 = "assets/images/products/nike-shoes.png";
+    static String productImage10 = "assets/images/products/nike-shoes.png";
+    static String productImage11 = "assets/images/products/nike-shoes.png";
+    static String productImage12 = "assets/images/products/nike-shoes.png";
+    static String productImage13 = "assets/images/products/nike-shoes.png";
+    static String productImage14 = "assets/images/products/nike-shoes.png";
+    static String productImage15 = "assets/images/products/nike-shoes.png";
+    static String productImage16 = "assets/images/products/nike-shoes.png";
+    static String productImage17 = "assets/images/products/nike-shoes.png";
+    static String productImage18 = "assets/images/products/nike-shoes.png";
+    static String productImage19 = "assets/images/products/nike-shoes.png";
+    static String productImage20 = "assets/images/products/nike-shoes.png";
+    static String productImage21 = "assets/images/products/nike-shoes.png";
+    static String productImage22 = "assets/images/products/nike-shoes.png";
+    static String productImage23 = "assets/images/products/nike-shoes.png";
+    static String productImage24 = "assets/images/products/nike-shoes.png";
+    static String productImage25 = "assets/images/products/nike-shoes.png";
+    static String productImage26 = "assets/images/products/nike-shoes.png";
+    static String productImage27 = "assets/images/products/nike-shoes.png";
+    static String productImage28 = "assets/images/products/nike-shoes.png";
+    static String productImage29 = "assets/images/products/nike-shoes.png";
+    static String productImage30 = "assets/images/products/nike-shoes.png";
+    static String productImage31 = "assets/images/products/nike-shoes.png";
+    static String productImage32 = "assets/images/products/nike-shoes.png";
+    static String productImage33 = "assets/images/products/nike-shoes.png";
+    static String productImage34 = "assets/images/products/nike-shoes.png";
+    static String productImage35 = "assets/images/products/nike-shoes.png";
+    static String productImage36 = "assets/images/products/nike-shoes.png";
+    static String productImage37 = "assets/images/products/nike-shoes.png";
+    static String productImage38 = "assets/images/products/nike-shoes.png";
+    static String productImage39 = "assets/images/products/nike-shoes.png";
+    static String productImage40 = "assets/images/products/nike-shoes.png";
+
   }
