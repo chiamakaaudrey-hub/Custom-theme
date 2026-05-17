@@ -58,7 +58,8 @@ class HomeScreen extends StatelessWidget {
                           /// -- Categories
                           THomeCategories(),
                       ],),),
-                    ],
+                    SizedBox(height: TSizes.spaceBtwSections),
+                  ],
                 ),
                 ),
             /// -- Body -- Tutorial [Section #3, Video #5]
@@ -77,12 +78,10 @@ class HomeScreen extends StatelessWidget {
                 /// -- Popular Products -- Tutorial [Section #3, Video #7]
                 TGridLayout(itemCount: 2, itemBuilder: (_, index) => TProductCardVertical()),
     ],
-    )
-            )
-          ],
         ),
       ),
-    );
+    ]),
+      ),);
   }
 }
 

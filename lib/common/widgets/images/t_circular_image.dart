@@ -15,7 +15,7 @@ class TCircularImage extends StatelessWidget {
     required this.image,
     this.fit = BoxFit.cover,
     required this.padding,
-    this.isNetworkImage = false, this.showBorder = true,
+    this.isNetworkImage = false, this.showBorder = false,
   });
 
   final BoxFit? fit;
@@ -32,10 +32,10 @@ class TCircularImage extends StatelessWidget {
       width: width,
       height: height,
       padding: EdgeInsets.all(TSizes.sm),
-      decoration: BoxDecoration(
-        color: backgroundColor ?? (THelperFunctions.isDarkMode(context) ? TColors.black : TColors.white),
-        borderRadius: BorderRadius.circular(100),
-      ),
+      //decoration: BoxDecoration(
+        //color: backgroundColor ?? (THelperFunctions.isDarkMode(context) ? TColors.black : TColors.white),
+        //borderRadius: BorderRadius.circular(100),
+      //),
       child: Center(
         child: Image(
           fit:  fit,
