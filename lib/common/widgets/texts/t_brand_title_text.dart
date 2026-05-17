@@ -13,6 +13,7 @@ class TBrandTitleText extends StatelessWidget {
     this.maxLines = 1,
     this.textAlign = TextAlign.center,
     this.brandTextSize = TextSizes.small,
+    this.showBorder = true,
   });
 
   final Color? color;
@@ -20,6 +21,7 @@ class TBrandTitleText extends StatelessWidget {
   final int maxLines;
   final TextAlign? textAlign;
   final TextSizes brandTextSize;
+  final bool showBorder;
 
   @override
   Widget build(BuildContext context) {

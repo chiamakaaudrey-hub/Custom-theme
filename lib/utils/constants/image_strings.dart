@@ -43,8 +43,8 @@ import 'package:flutter/material.dart';
 
     // Products
     static String productImage1 = "assets/images/products/nike-shoes.png";
-    static String productImage2 = "assets/images/products/nike-shoes.png";
-    static String productImage3 = "assets/images/products/nike-shoes.png";
+    static String productImage2 = "assets/images/products/product-1.png";
+    static String productImage3 = "assets/images/products/product-jacket.png";
     static String productImage4 = "assets/images/products/nike-shoes.png";
     static String productImage5 = "assets/images/products/nike-shoes.png";
     static String productImage6 = "assets/images/products/nike-shoes.png";

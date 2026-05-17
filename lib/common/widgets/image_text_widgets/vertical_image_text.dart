@@ -32,8 +32,8 @@ class TVerticalImageText extends StatelessWidget {
           children: [
             /// -- Circular Icon
             Container(
-              width: 56,
-              height: 56,
+              width: 50,
+              height: 50,
               padding: EdgeInsets.all(TSizes.sm),
               decoration: BoxDecoration(
                 color: backgroundColor ?? (dark ? TColors.black : TColors.white),

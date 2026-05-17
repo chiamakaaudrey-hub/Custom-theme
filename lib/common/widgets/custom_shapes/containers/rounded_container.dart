@@ -8,7 +8,7 @@ class TRoundedContainer extends StatelessWidget {
     this.height,
     this.child,
     required this.radius,
-    this.showBorder = false,
+    this.showBorder = true,
     required this.borderColor,
     required this.backgroundColor,
     this.padding,

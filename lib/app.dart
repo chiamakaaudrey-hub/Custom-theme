@@ -11,7 +11,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
       home: OnBoardingScreen(),
