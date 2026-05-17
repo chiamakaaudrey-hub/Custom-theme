@@ -20,6 +20,7 @@ class TCategoryTab extends StatelessWidget {
           children: [
             /// -- Brands
             TBrandShowcase(images: [TImages.productImage3, TImages.productImage2, TImages.productImage1]),
+            TBrandShowcase(images: [TImages.productImage6, TImages.productImage5, TImages.productImage4]),
             SizedBox(height: TSizes.spaceBtwItems),
       
             /// -- Products

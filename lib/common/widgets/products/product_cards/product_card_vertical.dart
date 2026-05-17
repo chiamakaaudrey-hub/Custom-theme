@@ -74,6 +74,9 @@ class TProductCardVertical extends StatelessWidget {
             /// -- Details
             Padding(
                 padding: EdgeInsets.only(left: TSizes.sm),
+            // Only reason to use the [SizedBox] here is to make Column full Width
+              child: SizedBox(
+                width: double.infinity,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -83,6 +86,8 @@ class TProductCardVertical extends StatelessWidget {
                   ],
                 ),
             ),
+            ),
+        // Todo: Add Spacer() here to keep the height of each Box same in case 1 or 2 lines of Headings
         Spacer(),
         /// Price Row
         Row(
