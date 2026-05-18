@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:readmore/readmore.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/icons/t_circular_icon.dart';
 import 'package:t_store/common/widgets/images/t_rounded_image.dart';
+import 'package:t_store/common/widgets/texts/section_heading.dart';
+import 'package:t_store/features/shop/screens/product%20details/widgets/bottom_add_to_cart_widget.dart';
+import 'package:t_store/features/shop/screens/product%20details/widgets/product_attributes.dart';
 import 'package:t_store/features/shop/screens/product%20details/widgets/product_detail_image_slider.dart';
 import 'package:t_store/features/shop/screens/product%20details/widgets/product_meta_data.dart';
 import 'package:t_store/features/shop/screens/product%20details/widgets/rating_share_widget.dart';
@@ -21,6 +25,7 @@ class ProductDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
+      bottomNavigationBar: TBottomAddToCart(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -39,9 +44,36 @@ class ProductDetailScreen extends StatelessWidget {
                     TProductMetaData(),
 
                     /// -- Attributes
+                    TProductAttributes(),
+                    SizedBox(height: TSizes.spaceBtwSections),
+
                     /// -- Checkout Button
+                    SizedBox(width: double.infinity, child: ElevatedButton(onPressed: (){}, child: Text('Checkout'))),
+                    SizedBox(height: TSizes.spaceBtwItems),
+                    
                     /// -- Description
+                    TSectionHeading(title: 'Description', showActionButton: false),
+                    SizedBox(height: TSizes.spaceBtwItems),
+                    ReadMoreText('This is a product description for Blue Nike Sleeveless vest. There are more things that can be added but I will stop here',
+                      trimLines: 2,
+                      trimMode: TrimMode.Line,
+                      trimCollapsedText: 'Show more',
+                      trimExpandedText: 'Less',
+                      moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                      lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                    ),
+
                     /// -- Reviews
+                    Divider(),
+                    SizedBox(height: TSizes.spaceBtwItems),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TSectionHeading(title: 'Reviews (199)', showActionButton: false),
+                            IconButton(icon: Icon(Iconsax.arrow_right_3, size: 18), onPressed: (){}),
+                      ],
+                    ),
+                    SizedBox(height: TSizes.spaceBtwSections),
                   ],
                 ) ,
             ),

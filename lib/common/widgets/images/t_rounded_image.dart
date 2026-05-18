@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:t_store/utils/constants/colors.dart';
 
 import '../../../utils/constants/sizes.dart';
 
@@ -36,7 +37,7 @@ class TRoundedImage extends StatelessWidget {
       child: Container(
         width: width,
         height: height,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(borderRadius)),
+        decoration: BoxDecoration(border: Border.all(color: Colors.blue), borderRadius: BorderRadius.circular(borderRadius)),
         child: ClipRRect(
           borderRadius: applyImageRadius ? BorderRadius.circular(borderRadius) : BorderRadius.zero,
           child: Image(fit: fit, image: isNetworkImage ? NetworkImage(imageUrl) : AssetImage(imageUrl) as ImageProvider),
