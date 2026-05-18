@@ -41,6 +41,11 @@ import 'package:flutter/material.dart';
     static String promoBanner3 = "assets/images/banners/promo-banner-3.png";
     static String promoBanner4 = "assets/images/banners/promo-banner-4.png";
 
+    // -- Product Reviews
+    static String userProfileImage1= "assets/images/reviews/review_profile_image_1.png";
+    static String userProfileImage2= "assets/images/reviews/review_profile_image_2.png";
+    static String userProfileImage3= "assets/images/reviews/review_profile_image_3.jpg";
+
     // -- Profile
     static String user = "assets/images/user/user.png";
 
