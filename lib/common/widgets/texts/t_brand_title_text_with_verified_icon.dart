@@ -15,7 +15,6 @@ class TBrandTitleTextWithVerifiedIcon extends StatelessWidget {
     this.iconColor = Colors.blue,
     this.textAlign = TextAlign.center,
     this.brandTextSize = TextSizes.small,
-    this.showBorder = true,
   });
 
   final String title;
@@ -23,7 +22,6 @@ class TBrandTitleTextWithVerifiedIcon extends StatelessWidget {
   final Color? textColor, iconColor;
   final TextAlign? textAlign;
   final TextSizes brandTextSize;
-  final bool showBorder;
 
   @override
   Widget build(BuildContext context) {

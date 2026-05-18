@@ -3,6 +3,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/utils/device/device_utility.dart';
+import 'package:t_store/utils/helpers/helper_functions.dart';
 import '../../../utils/constants/sizes.dart';
 
 class TAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -23,6 +24,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return Padding(
       padding: EdgeInsetsGeometry.symmetric(horizontal: TSizes.md),
       child: AppBar(
