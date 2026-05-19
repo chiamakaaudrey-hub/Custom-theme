@@ -46,6 +46,17 @@ import 'package:flutter/material.dart';
     static String userProfileImage2= "assets/images/reviews/review_profile_image_2.png";
     static String userProfileImage3= "assets/images/reviews/review_profile_image_3.jpg";
 
+    // -- Payment Methods
+    static String applePay = "assets/icons/payment_methods/apple-pay.png";
+    static String googlePay = "assets/icons/payment_methods/google-pay.png";
+    static String creditCard = "assets/icons/payment_methods/credit-card.png";
+    static String masterCard = "assets/icons/payment_methods/master-card.png";
+    static String paypal = "assets/icons/payment_methods/paypal.png";
+    static String visa = "assets/icons/payment_methods/visa.png";
+    static String paystack = "assets/icons/payment_methods/paystack.png";
+    static String paytm = "assets/icons/payment_methods/paytm.png";
+    static String successfulPaymentIcon = "assets/icons/payment_methods/successful_payment_icon.png";
+
     // -- Profile
     static String user = "assets/images/user/user.png";
 
