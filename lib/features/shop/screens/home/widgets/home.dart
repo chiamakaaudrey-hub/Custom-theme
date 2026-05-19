@@ -1,9 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/curved_edges/curved_edges.dart';
 import 'package:t_store/common/widgets/layout/grid_layout.dart';
+import 'package:t_store/features/shop/screens/all_products/all_products.dart';
 import 'package:t_store/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/device/device_utility.dart';
@@ -72,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(height: TSizes.spaceBtwSections),
 
                 /// -- Heading
-                TSectionHeading(title: 'Popular Products', onPressed: (){}),
+                TSectionHeading(title: 'Popular Products', onPressed: () => Get.to(() => AllProducts())),
                 SizedBox(height: TSizes.spaceBtwItems),
 
                 /// -- Popular Products -- Tutorial [Section #3, Video #7]

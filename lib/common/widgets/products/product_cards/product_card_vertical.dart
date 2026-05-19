@@ -88,36 +88,41 @@ class TProductCardVertical extends StatelessWidget {
                 ),
             ),
             ),
-        // Todo: Add Spacer() here to keep the height of each Box same in case 1 or 2 lines of Headings
-        Spacer(),
-        /// Price Row
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            /// Price
-            Padding(
-              padding: EdgeInsets.only(left: TSizes.sm),
-              child: const TProductPriceText(price: '35.0'),
-            ),
 
-            /// Add to Cart Button
-            Container(
-              decoration: BoxDecoration(
-                color: TColors.dark,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(TSizes.cardRadiusMd),
-                  bottomRight: Radius.circular(TSizes.productImageRadius),
+            // Use Spacer() to utilize all the space to set the price and the cart button at the bottom
+            // This usually happens when Product title is in single line or 2 lines (Max)
+            Spacer(),
+        /// Price Row
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+
+                /// Price
+                Padding(
+                  padding: EdgeInsets.only(left: TSizes.sm),
+                  child: const TProductPriceText(price: '35.0'),
                 ),
-              ),
-              child: SizedBox(
-                  width: TSizes.iconLg * 1.2,
-                  height: TSizes.iconLg * 1.2,
-                  child: Center(child: Icon(Iconsax.add, color: TColors.white))),
+
+                /// Add to Cart Button
+                Container(
+                  decoration: BoxDecoration(
+                    color: TColors.dark,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(TSizes.cardRadiusMd),
+                      bottomRight: Radius.circular(TSizes.productImageRadius),
+                    ),
+                  ),
+                  child: SizedBox(
+                      width: TSizes.iconLg * 1.2,
+                      height: TSizes.iconLg * 1.2,
+                      child: Center(
+                          child: Icon(Iconsax.add, color: TColors.white)),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-    ]),
-    ),
+          ]),
+      ),
     );
   }
 }
