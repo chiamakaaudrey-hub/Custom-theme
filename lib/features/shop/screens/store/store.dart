@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart' show GetNavigation;
 import 'package:t_store/common/widgets/appbar/tabbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/search_container.dart';
@@ -74,7 +76,7 @@ class StoreScreen extends StatelessWidget {
                       TSectionHeading(
                         title: 'Featured Brands',
                         showActionButton: true,
-                        onPressed: () {},
+                        onPressed: () => Get.to(()  => TBrandCard(showBorder: true)),
                       ),
                       SizedBox(height: TSizes.spaceBtwItems / 1.5),
 

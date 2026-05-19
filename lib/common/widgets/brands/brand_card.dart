@@ -33,7 +33,7 @@ class TBrandCard extends StatelessWidget {
         child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              /// -- Icon (Never add overlayColor
+              /// -- Icon (Never add overlayColor)
               Flexible(
                 child: TCircularImage(
                   isNetworkImage: false,
@@ -46,7 +46,9 @@ class TBrandCard extends StatelessWidget {
               ),
               SizedBox(width: TSizes.spaceBtwItems / 2),
 
-              /// -- Text
+              /// -- Texts
+              // [Expanded] & Column [MainAxisSize.min] is important to keep the elements in the vertical center and also
+              // to keep text inside the boundaries
               Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,

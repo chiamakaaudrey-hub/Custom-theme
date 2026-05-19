@@ -5,6 +5,8 @@ import 'package:t_store/common/widgets/layout/grid_layout.dart';
 import 'package:t_store/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
+import '../../../../common/widgets/products/sortable/sortable_products.dart';
+
 class AllProducts extends StatelessWidget {
   const AllProducts({super.key});
 
@@ -15,21 +17,11 @@ class AllProducts extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(TSizes.defaultSpace),
-          child: Column(
-            children: [
-              /// Dropdown
-              DropdownButtonFormField(
-                decoration: InputDecoration(prefixIcon: Icon(Iconsax.sort)),
-                  onChanged: (value){},
-                  items: ['Name', 'Higher Price', 'Lower Price', 'Sale', 'Newest', 'Popularity'].map((option) => DropdownMenuItem(value: option, child: Text(option))).toList(),
-              ),
-              SizedBox(height: TSizes.spaceBtwSections),
-              /// Products
-              TGridLayout(itemCount: 8, itemBuilder: (_, index) => TProductCardVertical()),
-            ],
-          ),
+          child: TSortableProducts(),
         ),
       ),
     );
   }
 }
+
+
