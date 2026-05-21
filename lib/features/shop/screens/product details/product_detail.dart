@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
-import 'package:t_store/common/widgets/appbar/appbar.dart';
-import 'package:t_store/common/widgets/icons/t_circular_icon.dart';
-import 'package:t_store/common/widgets/images/t_rounded_image.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
 import 'package:t_store/features/shop/screens/product%20details/widgets/bottom_add_to_cart_widget.dart';
 import 'package:t_store/features/shop/screens/product%20details/widgets/product_attributes.dart';
@@ -14,12 +10,9 @@ import 'package:t_store/features/shop/screens/product%20details/widgets/product_
 import 'package:t_store/features/shop/screens/product%20details/widgets/product_meta_data.dart';
 import 'package:t_store/features/shop/screens/product%20details/widgets/rating_share_widget.dart';
 import 'package:t_store/features/shop/screens/product%20reviews/product_reviews.dart';
-import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
-import '../../../../common/widgets/custom_shapes/curved_edges/curved-edges-widget.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   const ProductDetailScreen({super.key});

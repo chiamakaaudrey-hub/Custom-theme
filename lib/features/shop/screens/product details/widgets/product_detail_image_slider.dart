@@ -46,7 +46,7 @@ class TProductImageSlider extends StatelessWidget {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   physics: AlwaysScrollableScrollPhysics(),
-                  separatorBuilder: (_, __) => SizedBox(width: TSizes.spaceBtwItems),
+                  separatorBuilder: (_, _) => SizedBox(width: TSizes.spaceBtwItems),
                   itemBuilder: (_, index) =>   TRoundedImage(
                     width: 80,
                     borderRadius: TSizes.md,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/theme/theme.dart';
 import 'features/authentication/screens/onboarding/onboarding.dart';
 
@@ -14,7 +15,26 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
-      home: OnBoardingScreen(),
+      /// Show Loader or Circular Progress Indicator meanwhile Authentication Repository is deciding to show relevant screen.
+      home: Scaffold(backgroundColor: TColors.primary, body: Center(child:  CircularProgressIndicator(color: Colors.white))),
     );
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

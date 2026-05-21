@@ -6,7 +6,6 @@ import 'package:t_store/features/authentication/screens/password_configuration/r
 import 'package:t_store/utils/constants/text_strings.dart';
 
 import '../../../../utils/constants/sizes.dart';
-import '../../../../utils/constants/text_strings.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});

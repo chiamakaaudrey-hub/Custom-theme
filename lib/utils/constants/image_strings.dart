@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 /// This class contains all the App Images in String format
   class TImages {

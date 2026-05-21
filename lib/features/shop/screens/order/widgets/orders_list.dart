@@ -13,7 +13,7 @@ class TOrderListItems extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode(context);
     return ListView.separated(
       shrinkWrap: true,
-       separatorBuilder: (_, __) => SizedBox(height: TSizes.spaceBtwItems),
+       separatorBuilder: (_, _) => SizedBox(height: TSizes.spaceBtwItems),
       itemCount: 10,
       itemBuilder: (_, index) => TRoundedContainer(
         radius: TSizes.cardRadiusLg,

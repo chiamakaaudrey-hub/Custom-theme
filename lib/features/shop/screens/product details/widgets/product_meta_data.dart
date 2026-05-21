@@ -8,8 +8,6 @@ import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../../../common/widgets/custom_shapes/containers/rounded_container.dart';
 import '../../../../../common/widgets/texts/product_price_text.dart';
-import '../../../../../common/widgets/custom_shapes/containers/rounded_container.dart';
-import '../../../../../common/widgets/texts/product_price_text.dart';
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 
