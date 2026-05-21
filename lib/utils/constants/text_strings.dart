@@ -43,7 +43,7 @@ class TTexts {
   // -- Authentication Headings Text
   static String loginTitle = "Welcome back";
   static String loginSubTitle = "Discover Limitless Choices and Unmatched Convenience";
-  static String signupTitle = "Let'ratings create your account";
+  static String signupTitle = "Let's create your account";
   static String forgetPasswordTitle = "Forget Password";
   static String forgetPasswordSubTitle = "Don't worry sometimes people can forget too, enter your email and we will send you a password reset link";
   static String changeYourPasswordTitle = "Password Reset Email Sent";
