@@ -79,7 +79,6 @@ class CheckoutScreen extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () => Get.to(
             () => SuccessScreen(
-              image: TImages.successfulPaymentIcon,
               title: 'Payment Success',
               subTitle: 'Your item will be shipped soon!',
               onPressed: () => Get.offAll(() => NavigationMenu()),

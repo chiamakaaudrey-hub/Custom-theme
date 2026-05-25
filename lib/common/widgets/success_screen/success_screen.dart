@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:t_store/common/styles/spacing_styles.dart';
 
 import '../../../utils/constants/sizes.dart';
@@ -6,9 +7,9 @@ import '../../../utils/constants/text_strings.dart';
 import '../../../utils/helpers/helper_functions.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key, required this.image, required this.title,  required this.subTitle, required this.onPressed});
+  const SuccessScreen({super.key, required this.title,  required this.subTitle, required this.onPressed});
 
-  final String image, title, subTitle;
+  final String title, subTitle;
   final VoidCallback onPressed;
 
   @override
@@ -20,7 +21,12 @@ class SuccessScreen extends StatelessWidget {
           child: Column(
             children: [
               /// Image
-              Image(image: AssetImage(image), width: THelperFunctions.screenWidth() * 0.6),
+            Lottie.asset(
+            'assets/images/animations/animation_of_docer.json',
+            width: 200,
+            height: 200,
+            fit: BoxFit.contain,
+            ),
               SizedBox(height: TSizes.spaceBtwSections),
 
               /// Title & SubTitle

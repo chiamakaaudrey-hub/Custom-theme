@@ -83,7 +83,7 @@ class SignupController extends GetxController {
       );
 
       // Move to verify email screen
-      Get.to(() => SuccessScreen(image: TImages.successfulPaymentIcon, title: TTexts.yourAccountCreatedTitle, subTitle: TTexts.yourAccountCreatedSubTitle, onPressed: () => Get.to(() => NavigationMenu())));
+      Get.to(() => SuccessScreen(title: TTexts.yourAccountCreatedTitle, subTitle: TTexts.yourAccountCreatedSubTitle, onPressed: () => Get.to(() => NavigationMenu())));
 
     } catch (e) {
       // Remove Loader

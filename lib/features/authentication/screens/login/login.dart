@@ -21,7 +21,7 @@ class LoginScreen extends StatelessWidget {
           padding: TSpacingStyle.paddingWithAppBarHeight,
           child: Column(
             children: [
-              /// Logo, Title & Sub-Title
+              /// Header
               TLoginHeader(),
 
               /// Form
