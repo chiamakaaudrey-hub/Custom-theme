@@ -1,12 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:t_store/data/repositories/authentication_repositories.dart';
+import 'package:t_store/common/widgets/success_screen/success_screen.dart';
+import 'package:t_store/data/repositories/authentication_repository.dart';
+import 'package:t_store/navigation_menu.dart';
+import 'package:t_store/utils/constants/text_strings.dart';
 import 'package:t_store/utils/popups/loaders.dart';
-
+import '../../../../data/repositories/user/user_repository.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/helpers/network_manager.dart';
 import '../../../../utils/popups/full_screen_loader.dart';
 import '../../../personalization/models/user_model.dart';
+import '../../screens/signup/verify_email.dart';
 
 class SignupController extends GetxController {
   static SignupController get instance => Get.find();
@@ -25,7 +29,7 @@ class SignupController extends GetxController {
       GlobalKey<FormState>(); // Form Key for form validation
 
   /// -- SIGN UP
-  void signup() async {
+  Future<void> signup() async {
     try {
       // Start Loading
       TFullScreenLoader.openLoadingDialog(
@@ -54,11 +58,7 @@ class SignupController extends GetxController {
         return;
       }
       // Register user in the Firebase Authentication & Save user data in the Firebase
-      final userCredential = await AuthenticationRepository.instance
-          .registerWithEmailAndPassword(
-            email.text.trim(),
-            password.text.trim(),
-          );
+      final userCredential = await AuthenticationRepository.instance.registerWithEmailAndPassword(email.text.trim(), password.text.trim());
 
       // Save authenticated user data in the Firebase Firestone
       final newUser = UserModel(
@@ -70,7 +70,7 @@ class SignupController extends GetxController {
         phoneNumber: phoneNumber.text.trim(),
         profilePicture: '',
       );
-      final userRepository = Get.put(userRepository());
+      final userRepository = Get.put(UserRepository());
       await userRepository.saveUserRecord(newUser);
 
       // Remove Loader
@@ -83,7 +83,8 @@ class SignupController extends GetxController {
       );
 
       // Move to verify email screen
-      Get.to(() => verifyEmailScreen());
+      Get.to(() => SuccessScreen(image: TImages.successfulPaymentIcon, title: TTexts.yourAccountCreatedTitle, subTitle: TTexts.yourAccountCreatedSubTitle, onPressed: () => Get.to(() => NavigationMenu())));
+
     } catch (e) {
       // Remove Loader
       TFullScreenLoader.stopLoading();
@@ -93,3 +94,5 @@ class SignupController extends GetxController {
     }
   }
 }
+
+

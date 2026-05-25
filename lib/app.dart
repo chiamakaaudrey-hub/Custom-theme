@@ -3,7 +3,6 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:t_store/bindings/general_bindings.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/theme/theme.dart';
-import 'features/authentication/screens/onboarding/onboarding.dart';
 
 /// -- Use this Class to set up themes, initial Bindings, any animations and much more using Material Widget
 class App extends StatelessWidget {

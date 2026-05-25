@@ -39,6 +39,64 @@ class TFirebaseAuthException implements Exception {
         return 'The supplied credentials do not correspond to the previously signed in user.';
       case 'account-exists-with-different-credential':
         return 'An account already exists with the same email but different sign-in credentials.';
+      case 'operation-not-allowed':
+        return 'This operation is not allowed. Contact support for assistance.';
+      case 'expired-action-code':
+        return 'The action code has expired. Please request a new action code.';
+      case 'invalid-action-code':
+        return 'The action code is invalid. Please check the code and try again.';
+      case 'missing-action-code':
+        return 'The action code is missing. Please provide a valid action code.';
+      case 'user-token-expired':
+        return 'The user\'s token has expired and authentication is required. Please sign in again.';
+      case 'invalid-credential':
+        return 'The supplied credential is malformed or has expired.';
+      case 'user-not-found':
+        return 'No user found for the given email or UID.';
+      case 'user-token-revoked':
+        return 'The user\'s token has been revoked. Please sign in again';
+      case 'invalid-message-payload':
+        return 'The email template verification message payload is invalid.';
+      case 'invalid-sender':
+        return 'The email template sender is invalid. Please verify the sender\'s email.';
+      case 'invalid-recipient-email':
+        return 'The recipient email address is invalid. Please provide a valid recipient email.';
+      case 'missing-iframe-start':
+        return 'The email template is missing the iframe start tag.';
+      case 'missing-iframe-end':
+        return 'The email template is missing the iframe end tag.';
+      case 'missing-iframe-src':
+        return 'The email template is missing the iframe src attribute.';
+      case 'unknown':
+        return 'An unknown Firebase error occurred. Please try again.';
+      case 'invalid-custom-token':
+        return 'The custom token format is incorrect. Please check your custom token.';
+      case 'custom-token-mismatch':
+        return 'The custom token corresponds to a different audience.';
+      case 'captcha-check-failed':
+        return 'The reCAPTCHA response is invalid. Please try again.';
+      case 'app-not-authorized':
+        return 'The app is not authorized to use Firebase Authentication with the provided API key.';
+      case 'keychain-error':
+        return 'A keychain error occurred. Please check the keychain and try again.';
+      case 'internal-error':
+        return 'An internal authentication error occurred. Please try again later.';
+      case 'invalid-app-credential':
+        return 'The app credential is missing. Please provide valid app credentials.';
+      case 'session-cookie-expired':
+        return 'The Firebase session cookie has expired. Please sign in again.';
+      case 'INVALID_LOGIN_CREDENTIALS':
+        return 'Invalid login credentials.';
+      case 'uid-already-exists':
+        return 'The provided user ID is already in use by another user.';
+      case 'web-storage-unsupported':
+        return 'Web storage is not supported or is disabled.';
+      case 'app-deleted':
+        return 'This instance of FirebaseApp has been deleted.';
+      case 'user-token-mismatch':
+        return 'The provided user\'s token has a mismatch with the authenticated user\'s user ID.';
+      case '':
+        return '.';
       default:
         return 'An unexpected Firebase error occurred. Please try again.';
     }

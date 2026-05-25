@@ -1,29 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
-import 'package:t_store/common/widgets/success_screen/success_screen.dart';
-import 'package:t_store/features/authentication/screens/login/login.dart';
+import 'package:get/get.dart';
+import 'package:t_store/data/repositories/authentication_repository.dart';
+import 'package:t_store/features/authentication/controllers/signup/verify_email_controller.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
-
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/text_strings.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
-  const VerifyEmailScreen({super.key});
+  const VerifyEmailScreen({super.key, this.email});
+
+  final String? email;
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(VerifyEmailController());
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        actions: [
-          IconButton(
-            onPressed: () => Get.offAll(() => LoginScreen()),
-            icon: Icon(CupertinoIcons.clear),
-          ),
-        ],
+        actions: [IconButton(onPressed: () => AuthenticationRepository.instance.logout(), icon: Icon(CupertinoIcons.clear))],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -38,46 +35,23 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(height: TSizes.spaceBtwSections),
 
               /// Title & SubTitle
-              Text(
-                TTexts.confirmEmail,
-                style: Theme.of(context).textTheme.headlineMedium,
-                textAlign: TextAlign.center,
-              ),
+              Text(TTexts.confirmEmail, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
               SizedBox(height: TSizes.spaceBtwItems),
-              Text(
-                'support@codingwitht.com',
-                style: Theme.of(context).textTheme.labelLarge,
-                textAlign: TextAlign.center,
-              ),
+              Text(email ?? '', style: Theme.of(context).textTheme.labelLarge, textAlign: TextAlign.center),
               SizedBox(height: TSizes.spaceBtwItems),
-              Text(
-                TTexts.confirmEmailSubTitle,
-                style: Theme.of(context).textTheme.labelMedium,
-                textAlign: TextAlign.center,
-              ),
+              Text(TTexts.confirmEmailSubTitle, style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center),
               SizedBox(height: TSizes.spaceBtwSections),
 
               /// Buttons
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.to(
-                        () => SuccessScreen(
-                    image: TImages.staticSuccessIllustration,
-                    title: TTexts.yourAccountCreatedTitle,
-                    subTitle: TTexts.yourAccountCreatedSubTitle,
-                    onPressed: () => Get.to(() => LoginScreen()),
-                  ),),
+                  onPressed: () => controller.checkEmailVerificationStatus(),
                   child: Text(TTexts.tContinue),
                 ),
               ),
               SizedBox(height: TSizes.spaceBtwItems),
-              SizedBox(
-                width: double.infinity,
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(TTexts.resendEmail),
-                ),
+              SizedBox(width: double.infinity, child: TextButton(onPressed: () => controller.sendEmailVerification(), child: Text(TTexts.resendEmail)),
               ),
             ],
           ),

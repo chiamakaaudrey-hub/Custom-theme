@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
 class TLoaders {
-  static hideSnackBar() =>
+  static void hideSnackBar() =>
       ScaffoldMessenger.of(Get.context!).hideCurrentSnackBar();
 
-  static customToast({required message}) {
+  static void customToast({required message}) {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
         SnackBar(
             elevation: 0,
@@ -29,7 +27,7 @@ class TLoaders {
     );
   }
 
-  static successSnackBar({required title, message = '', duration = 3}) {
+  static void successSnackBar({required title, message = '', duration = 3}) {
   Get.snackbar(
     title,
     message,
@@ -44,7 +42,7 @@ class TLoaders {
   );
 }
 
-static warningSnackBar({required title, message = ''}) {
+static void warningSnackBar({required title, message = ''}) {
   Get.snackbar(
     title,
     message,
@@ -59,7 +57,7 @@ static warningSnackBar({required title, message = ''}) {
   );
 }
 
-static errorSnackBar({required title, message = ''}) {
+static void errorSnackBar({required title, message = ''}) {
   Get.snackbar(
     title,
     message,

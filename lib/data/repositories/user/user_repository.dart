@@ -6,6 +6,7 @@ import 'package:t_store/utils/exceptions/format_exceptions.dart';
 import 'package:t_store/utils/exceptions/platform_exceptions.dart';
 
 import '../../../features/personalization/models/user_model.dart';
+import '../../../utils/exceptions/firebase_exceptions.dart';
 
 /// Repository class for user-related operations
 class UserRepository extends GetxController {

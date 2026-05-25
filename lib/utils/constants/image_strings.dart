@@ -1,14 +1,15 @@
+import 'dart:core';
 
 /// This class contains all the App Images in String format
   class TImages {
 
     // -- App Logos
-    static String darkAppLogo = 'assets/logos/t-store-splash-logo-black.png';
-    static String lightAppLogo = 'assets/logos/t-store-splash-logo-white.png';
+    static String darkAppLogo = "assets/logos/t-store-splash-logo-black.png";
+    static String lightAppLogo = "assets/logos/t-store-splash-logo-white.png";
 
     // -- Social Logos
-    static String google = 'assets/logos/google-icon.png';
-    static String facebook = 'assets/logos/Facebook-icon.png';
+    static String google = "assets/logos/google-icon.png";
+    static String facebook = "assets/logos/Facebook-icon.png";
 
     // -- OnBoarding Images
     static String onBoardingImage1 ="assets/images/on_boarding_images/sammy-line-searching.gif";
@@ -22,7 +23,24 @@
     static String deliveredInPlaneIllustration = "assets/images/animations/sammy-line-come-back-later.png";
     static String deliveredEmailIllustration = "assets/images/animations/sammy-line-man-receives-a-mail.png";
     static String verifyIllustration = "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
+
+    // -- Lottie Animations
+    static String cartAnimation = "";
+    static String orderCompletedAnimation = "";
+    static String packageAnimation = "";
+    static String paperPlaneAnimation = "";
+    static String carAnimation = "";
+    static String pencilAnimation = "";
     static String docerAnimation = "assets/images/animations/docerAnimation.png";
+    static String searchAnimation = "";
+    static String emptyAnimation = "";
+    static String securityAnimation = "";
+    static String successfullyRegisterAnimation = "assets/images/animations/docerAnimation.png";
+    static String thankYouAnimation = "";
+    static String paymentSuccessfulAnimation = "";
+    static String loadingJuggleAnimation = "";
+    static String cloudUploadAnimation = "";
+    static String loaderAnimation = "";
 
     // -- Category Icons
     static String sportIcon = "assets/icons/categories/icons8-bowling-64.png";
