@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:t_store/data/repositories/authentication_repository.dart';
@@ -21,8 +21,8 @@ class LoginController extends GetxController {
 
   @override
   void onInit() {
-    email.text = localStorage.read('REMEMBER_ME_EMAIL');
-    password.text = localStorage.read('REMEMBER_ME_PASSWORD');
+    email.text = localStorage.read('REMEMBER_ME_EMAIL') ?? '';
+    password.text = localStorage.read('REMEMBER_ME_PASSWORD') ?? '';
     super.onInit();
   }
 
@@ -51,7 +51,7 @@ class LoginController extends GetxController {
             localStorage.write('REMEMBER_ME_PASSWORD', password.text.trim());
           }
 
-          // Login User using Email 7 Password Authentication
+          // Login User using Email & Password Authentication
           final userCredentials = await AuthenticationRepository.instance.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
           // Remove Loader
@@ -79,10 +79,10 @@ class LoginController extends GetxController {
       }
 
       // Google Authentication
-      final userCredentials = await AuthenticationRepository.instance.signInWithGoogle();
+      //final userCredentials = await AuthenticationRepository.instance.signInWithGoogle();
 
       // Save User Record
-      await userController.saveUserRecord(userCredentials);
+      //await userController.saveUserRecord(userCredentials);
 
       // Remove Loader
       TFullScreenLoader.stopLoading();
