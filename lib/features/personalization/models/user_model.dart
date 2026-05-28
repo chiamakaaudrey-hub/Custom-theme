@@ -21,7 +21,7 @@ class UserModel {
     required this.email,
     required this.phoneNumber,
     required this.profilePicture,
-});
+  });
 
   /// Helper function to get the full name
   String get fullName => '$firstName $lastName';
@@ -44,38 +44,40 @@ class UserModel {
   }
 
   /// Static function to create an empty user model
-  static UserModel empty() => UserModel(id: '', firstName: '', lastName: '', username: '', email: '', phoneNumber: '', profilePicture: '');
+  static UserModel empty() =>
+      UserModel(id: '', firstName: '', lastName: '', username: '', email: '', phoneNumber: '', profilePicture: '');
 
   /// Convert model to JSON structure for storing data in Firebase
   Map<String, dynamic> toJson() {
     return {
-      'FirstName' : firstName,
-      'LastName' : lastName,
-      'Username' : username,
-      'Email' : email,
-      'PhoneNumber' : phoneNumber,
-      'ProfilePicture' : profilePicture,
+      'FirstName': firstName,
+      'LastName': lastName,
+      'Username': username,
+      'Email': email,
+      'PhoneNumber': phoneNumber,
+      'ProfilePicture': profilePicture,
     };
   }
 
   /// Factory method to create a UserModel from a Firebase document snapshot
-  factory UserModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document) {
+  factory UserModel.fromSnapshot(
+      DocumentSnapshot<Map<String, dynamic>> document) {
     if (document.data() != null) {
       final data = document.data()!;
       return UserModel(
-          id: document.id,
-          firstName: data['FirstName'] ?? '',
-          lastName: data['LastName'] ?? '',
-          username: data['Username'] ?? '',
-          email: data['Email'] ?? '',
-          phoneNumber: data['PhoneNumber'] ?? '',
-          profilePicture: data['ProfilePicture'] ?? '',
+        id: document.id,
+        firstName: data['FirstName'] ?? '',
+        lastName: data['LastName'] ?? '',
+        username: data['Username'] ?? '',
+        email: data['Email'] ?? '',
+        phoneNumber: data['PhoneNumber'] ?? '',
+        profilePicture: data['ProfilePicture'] ?? '',
       );
+    } else {
+      return UserModel.empty();
     }
-    return UserModel.empty();
   }
 }
-
 
 
 

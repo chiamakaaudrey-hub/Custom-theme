@@ -58,6 +58,10 @@ class TTexts {
   static String homeAppbarTitle = "Good day for shopping";
   static String homeAppbarSubTitle = "Taimoor Sikander";
 
+// -- Product
+  static String popularProducts = "Popular Products";
+  static String featuredProducts = "Featured Products";
+
 
 }
 

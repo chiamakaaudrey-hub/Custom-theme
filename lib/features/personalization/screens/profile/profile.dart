@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/images/t_circular_image.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
+import 'package:t_store/features/personalization/screens/profile/widgets/change_name.dart';
 import 'package:t_store/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:t_store/utils/constants/sizes.dart';
-
-import '../../../../../utils/constants/image_strings.dart';
+import '../../../../utils/constants/image_strings.dart';
+import '../../controllers/user_controller.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return Scaffold(
       appBar: TAppBar(showBackArrow: true, title: Text('Profile')),
 
@@ -42,8 +46,8 @@ class ProfileScreen extends StatelessWidget {
               TSectionHeading(title: 'Profile Information', showActionButton: false),
               SizedBox(height: TSizes.spaceBtwItems),
 
-              TProfileMenu(title: 'Name', value: 'Chimamaka', onPressed: (){}),
-              TProfileMenu(title: 'Username', value: 'Chiamaka15', onPressed: (){}),
+              TProfileMenu(title: 'Name', value: controller.user.value.fullName, onPressed: () => Get.to(() => ChangeName())),
+              TProfileMenu(title: 'Username', value: controller.user.value.username, onPressed: (){}),
 
               SizedBox(height: TSizes.spaceBtwItems),
               Divider(),
@@ -63,7 +67,7 @@ class ProfileScreen extends StatelessWidget {
 
               Center(
                 child: TextButton(
-                    onPressed: (){},
+                    onPressed: () => controller.deleteAccountWarningPopup(),
                     child: Text('Close Account', style: TextStyle(color: Colors.red)),
                 ),
               )

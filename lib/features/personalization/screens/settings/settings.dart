@@ -12,7 +12,7 @@ import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
 import '../../../../common/widgets/list_tiles/user_profile_tile.dart';
-import '../profile/widgets/profile.dart';
+import '../profile/profile.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
