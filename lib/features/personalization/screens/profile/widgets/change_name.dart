@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/features/personalization/controllers/update_name_controller.dart';
 import 'package:t_store/utils/constants/sizes.dart';
+import 'package:t_store/utils/constants/text_strings.dart';
+import 'package:t_store/utils/validators/validation.dart';
 
 class ChangeName extends StatelessWidget {
   const ChangeName({super.key});
@@ -36,11 +39,26 @@ class ChangeName extends StatelessWidget {
                   children: [
                     TextFormField(
                       controller: controller.firstName,
-                      validator: ,
-                    )
+                      validator: (value) => TValidator.validateEmptyText('First name', value),
+                      expands: false,
+                      decoration: InputDecoration(labelText: TTexts.firstName, prefixIcon: Icon(Iconsax.user)),
+                    ),
+                    SizedBox(height: TSizes.spaceBtwInputFields),
+                    TextFormField(
+                      controller: controller.lastName,
+                      validator: (value) => TValidator.validateEmptyText('Last name', value),
+                      expands: false,
+                      decoration: InputDecoration(labelText: TTexts.lastName, prefixIcon: Icon(Iconsax.user)),
+                    ),
                   ],
-                )
+                ),
+              ),
+              SizedBox(height: TSizes.spaceBtwSections),
 
+              /// Save Button
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(onPressed: () => controller.updateUserName(), child: Text('Save')),
               ),
             ],
           ) ,
