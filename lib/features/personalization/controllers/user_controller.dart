@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:t_store/data/repositories/authentication_repository.dart';
 import 'package:t_store/data/repositories/user/user_repository.dart';
 import 'package:t_store/features/authentication/screens/login/login.dart';
@@ -19,9 +20,12 @@ class UserController extends GetxController {
   static UserController get instance => Get.find();
 
   final profileLoading = false.obs;
-  Rx<UserModel> user = UserModel.empty().obs;
+  Rx<UserModel> user = UserModel
+      .empty()
+      .obs;
 
   final hidePassword = false.obs;
+  final imageUploading = false.obs;
   final verifyEmail = TextEditingController();
   final verifyPassword = TextEditingController();
   final userRepository = Get.put(UserRepository());
@@ -50,24 +54,34 @@ class UserController extends GetxController {
   /// Save user record from any Registration provider
   Future<void> saveUserRecord(UserCredential? userCredentials) async {
     try {
-      if (userCredentials != null) {
-        // Convert Name to First and Last Name
-        final nameParts = UserModel.nameParts(userCredentials.user!.displayName ?? '');
-        final username = UserModel.generateUsername(userCredentials.user!.displayName ?? '');
+      // First Update Rx and then check if user data is already stored. If not, store new dats
+      await fetchUserRecord();
 
-        // Map Data
-        final user = UserModel(
+      // If no record already stored
+      if (user.value.id.isEmpty) {
+        if (userCredentials != null) {
+          // Convert Name to First and Last Name
+          final nameParts = UserModel.nameParts(
+              userCredentials.user!.displayName ?? '');
+          final username = UserModel.generateUsername(
+              userCredentials.user!.displayName ?? '');
+
+          // Map Data
+          final user = UserModel(
             id: userCredentials.user!.uid,
             firstName: nameParts[0],
-            lastName: nameParts.length > 1 ? nameParts.sublist(1).join(' ') : '',
+            lastName: nameParts.length > 1
+                ? nameParts.sublist(1).join(' ')
+                : '',
             username: username,
             email: userCredentials.user!.email ?? '',
             phoneNumber: userCredentials.user!.phoneNumber ?? '',
             profilePicture: userCredentials.user!.photoURL ?? '',
-        );
+          );
 
-        // Save user data
-        await userRepository.saveUserRecord(user);
+          // Save user data
+          await userRepository.saveUserRecord(user);
+        }
       }
     } catch (e) {
       TLoaders.warningSnackBar(
@@ -83,11 +97,13 @@ class UserController extends GetxController {
       contentPadding: EdgeInsets.all(TSizes.md),
       title: 'Delete Account',
       middleText:
-        'Are you sure you want to delete your account permanently? This action is not reversible and all of your data will be removed permanently.',
+      'Are you sure you want to delete your account permanently? This action is not reversible and all of your data will be removed permanently.',
       confirm: ElevatedButton(
-          onPressed: () => deleteUserAccount(),
-          style: ElevatedButton.styleFrom(backgroundColor: Colors.red, side: BorderSide(color: Colors.red)),
-          child: Padding(padding: EdgeInsets.symmetric(horizontal: TSizes.lg), child: Text('Delete')),
+        onPressed: () => deleteUserAccount(),
+        style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.red, side: BorderSide(color: Colors.red)),
+        child: Padding(padding: EdgeInsets.symmetric(horizontal: TSizes.lg),
+            child: Text('Delete')),
       ),
       cancel: OutlinedButton(
         child: Text('Cancel'),
@@ -99,11 +115,15 @@ class UserController extends GetxController {
   /// Delete User Account
   void deleteUserAccount() async {
     try {
-      TFullScreenLoader.openLoadingDialog('Processing', 'assets/images/animations/animation_of_docer.json');
+      TFullScreenLoader.openLoadingDialog(
+          'Processing', 'assets/images/animations/animation_of_docer.json');
 
       /// First re-authenticate user
       final auth = AuthenticationRepository.instance;
-      final provider = auth.authUser!.providerData.map((e) => e.providerId).first;
+      final provider = auth.authUser!
+          .providerData
+          .map((e) => e.providerId)
+          .first;
       if (provider.isNotEmpty) {
         // Re-verify Auth Email
         if (provider == 'google.com') {
@@ -123,9 +143,10 @@ class UserController extends GetxController {
   }
 
   /// RE-AUTHENTICATE before deleting
-    Future<void> reAuthenticateEmailAndPassword() async {
+  Future<void> reAuthenticateEmailAndPassword() async {
     try {
-      TFullScreenLoader.openLoadingDialog('Processing', 'assets/images/animations/animation_of_docer.json');
+      TFullScreenLoader.openLoadingDialog(
+          'Processing', 'assets/images/animations/animation_of_docer.json');
 
       // Check Internet
       final isConnected = await NetworkManager.instance.isConnected();
@@ -139,7 +160,9 @@ class UserController extends GetxController {
         return;
       }
 
-      await AuthenticationRepository.instance.reAuthenticateWithEmailAndPassword(verifyEmail.text.trim(), verifyPassword.text.trim());
+      await AuthenticationRepository.instance
+          .reAuthenticateWithEmailAndPassword(
+          verifyEmail.text.trim(), verifyPassword.text.trim());
       await AuthenticationRepository.instance.deleteAccount();
       TFullScreenLoader.stopLoading();
       Get.offAll(() => LoginScreen());
@@ -147,10 +170,37 @@ class UserController extends GetxController {
       TFullScreenLoader.stopLoading();
       TLoaders.warningSnackBar(title: 'Oh Snap!', message: e.toString());
     }
+  }
+
+  /// Upload Profile Image
+  uploadUserProfilePicture() async {
+    try {
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery,
+          imageQuality: 70,
+          maxHeight: 512,
+          maxWidth: 512);
+      if (image != null) {
+        imageUploading.value = true;
+        // Upload Image
+        final imageUrl = await userRepository.uploadImage('Users/Images/Profile/', image);
+
+        // Update User Image Record
+        Map<String, dynamic> json = {'ProfilePicture': imageUrl};
+        await userRepository.updateSingleField(json);
+
+        user.value.profilePicture = imageUrl;
+        user.refresh();
+        TLoaders.successSnackBar(title: 'Congratulations',
+            message: 'Your profile picture has been updated!');
+      }
+    } catch (e) {
+      TLoaders.errorSnackBar(
+          title: 'OhSnap', message: 'Something went wrong: $e');
+    } finally {
+      imageUploading.value = true;
     }
+  }
 }
-
-
 
 
 
