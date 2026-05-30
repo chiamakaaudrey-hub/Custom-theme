@@ -61,14 +61,14 @@ import 'dart:core';
     static String pumaLogo = "assets/icons/brands/puma-logo.png";
 
     // --  Promo Banners
-    static String promoBanner1 = "assets/images/banners/promo-banner-1.png";
-    static String promoBanner2 = "assets/images/banners/promo-banner-2.png";
-    static String promoBanner3 = "assets/images/banners/promo-banner-3.png";
-    static String promoBanner4 = "assets/images/banners/promo-banner-4.png";
-    static String promoBanner5 = "assets/images/banners/promo-banner-4.png";
-    static String promoBanner6 = "assets/images/banners/promo-banner-4.png";
-    static String promoBanner7 = "assets/images/banners/promo-banner-4.png";
-    static String promoBanner8 = "assets/images/banners/promo-banner-4.png";
+    static String promoBanner1 = "assets/images/banners/promo-banners-1.png";
+    static String promoBanner2 = "assets/images/banners/promo-banners-2.png";
+    static String promoBanner3 = "assets/images/banners/promo-banners-3.png";
+    static String promoBanner4 = "assets/images/banners/promo-banners-4.png";
+    static String promoBanner5 = "assets/images/banners/promo-banners-4.png";
+    static String promoBanner6 = "assets/images/banners/promo-banners-4.png";
+    static String promoBanner7 = "assets/images/banners/promo-banners-4.png";
+    static String promoBanner8 = "assets/images/banners/promo-banners-4.png";
 
     // --  Banners
     static String banner1 = "assets/images/banners/banner1.png";

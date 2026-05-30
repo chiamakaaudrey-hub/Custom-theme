@@ -1,9 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:t_store/utils/formatters/formatters.dart';
 
+import 'address_model.dart';
+
 /// Model class representing user data
 class UserModel {
   // Keep those values final which you do not want to update
+
+  final List<AddressModel> addresses;
   final String id;
   String firstName;
   String lastName;
@@ -21,6 +25,7 @@ class UserModel {
     required this.email,
     required this.phoneNumber,
     required this.profilePicture,
+    required this.addresses,
   });
 
   /// Helper function to get the full name
@@ -45,7 +50,7 @@ class UserModel {
 
   /// Static function to create an empty user model
   static UserModel empty() =>
-      UserModel(id: '', firstName: '', lastName: '', username: '', email: '', phoneNumber: '', profilePicture: '');
+      UserModel(id: '', firstName: '', lastName: '', username: '', email: '', phoneNumber: '', profilePicture: '', addresses: []);
 
   /// Convert model to JSON structure for storing data in Firebase
   Map<String, dynamic> toJson() {
@@ -72,6 +77,7 @@ class UserModel {
         email: data['Email'] ?? '',
         phoneNumber: data['PhoneNumber'] ?? '',
         profilePicture: data['ProfilePicture'] ?? '',
+        addresses: [],
       );
     } else {
       return UserModel.empty();

@@ -66,7 +66,7 @@ class ProductDetailScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TSectionHeading(title: 'Reviews (199)', showActionButton: false),
-                            IconButton(icon: Icon(Iconsax.arrow_right_3, size: 18), onPressed: () => Get.to(() => TProductReviewScreen())),
+                            IconButton(icon: Icon(Iconsax.arrow_right_3, size: 18), onPressed: () => Get.to(() => ProductReviewScreen())),
                       ],
                     ),
                     SizedBox(height: TSizes.spaceBtwSections),

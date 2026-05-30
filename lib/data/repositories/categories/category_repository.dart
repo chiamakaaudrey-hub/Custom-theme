@@ -2,8 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:t_store/features/shop/models/category_model.dart';
-
-import '../../../common/widgets/services/firebase_storage_service.dart';
+import '../../services/firebase_storage_service.dart';
 import '../../../utils/exceptions/firebase_exceptions.dart';
 import '../../../utils/exceptions/platform_exceptions.dart';
 
