@@ -7,7 +7,7 @@ import 'package:t_store/common/widgets/success_screen/success_screen.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
 import 'package:t_store/utils/popups/loaders.dart';
-import '../../../../data/repositories/authentication_repository.dart';
+import '../../../../data/repositories/authentication/authentication_repository.dart';
 
 class VerifyEmailController extends GetxController {
   static VerifyEmailController get instance => Get.find();

@@ -53,11 +53,32 @@ import 'dart:core';
     static String jeweleryIcon = "assets/icons/categories/icons8-sparkling-diamond-64.png";
     static String electronicsIcon = "assets/icons/categories/icons8-smartphone-64.png";
 
-    // -- Banners
+    // -- Brand Icons
+    static String nikeLogo = "assets/icons/brands/nike-logo.png";
+    static String adidasLogo = "assets/icons/brands/adidas-logo.png";
+    static String appleLogo = "assets/icons/brands/apple-logo.png";
+    static String jordanLogo = "assets/icons/brands/jordan-logo.png";
+    static String pumaLogo = "assets/icons/brands/puma-logo.png";
+
+    // --  Promo Banners
     static String promoBanner1 = "assets/images/banners/promo-banner-1.png";
     static String promoBanner2 = "assets/images/banners/promo-banner-2.png";
     static String promoBanner3 = "assets/images/banners/promo-banner-3.png";
     static String promoBanner4 = "assets/images/banners/promo-banner-4.png";
+    static String promoBanner5 = "assets/images/banners/promo-banner-4.png";
+    static String promoBanner6 = "assets/images/banners/promo-banner-4.png";
+    static String promoBanner7 = "assets/images/banners/promo-banner-4.png";
+    static String promoBanner8 = "assets/images/banners/promo-banner-4.png";
+
+    // --  Banners
+    static String banner1 = "assets/images/banners/banner1.png";
+    static String banner2 = "assets/images/banners/banner2.png";
+    static String banner3 = "assets/images/banners/banner3.png";
+    static String banner4 = "assets/images/banners/banner4.png";
+    static String banner5 = "assets/images/banners/banner1.png";
+    static String banner6 = "assets/images/banners/banner2.png";
+    static String banner7 = "assets/images/banners/banner3.png";
+    static String banner8 = "assets/images/banners/banner4.png";
 
     // -- Product Reviews
     static String userProfileImage1= "assets/images/reviews/review_profile_image_1.png";

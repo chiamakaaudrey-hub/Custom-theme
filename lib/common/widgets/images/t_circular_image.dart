@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:t_store/bindings/shimmer_effect.dart';
+import 'package:t_store/common/widgets/shimmers/shimmer.dart';
 
 import '../../../utils/constants/sizes.dart';
 
@@ -14,7 +14,7 @@ class TCircularImage extends StatelessWidget {
     required this.image,
     this.fit = BoxFit.cover,
     required this.padding,
-    this.isNetworkImage = false, this.showBorder = false,
+    this.isNetworkImage = false,
   });
 
   final BoxFit? fit;
@@ -23,7 +23,7 @@ class TCircularImage extends StatelessWidget {
   final Color? overlayColor;
   final Color? backgroundColor;
   final double width, height, padding;
-  final bool showBorder;
+
 
   @override
   Widget build(BuildContext context) {

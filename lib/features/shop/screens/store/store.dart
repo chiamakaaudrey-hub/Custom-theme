@@ -6,6 +6,7 @@ import 'package:t_store/common/widgets/custom_shapes/containers/search_container
 import 'package:t_store/common/widgets/layout/grid_layout.dart';
 import 'package:t_store/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
+import 'package:t_store/features/shop/controllers/category_controller.dart';
 import 'package:t_store/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -18,17 +19,12 @@ class StoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categories = CategoryController.instance.featuredCategories;
     return DefaultTabController(
-      length: 5,
+      length: categories.length,
       child: Scaffold(
         appBar: TAppBar(
-          title: Text(
-            'Store',
-            style: Theme
-                .of(context)
-                .textTheme
-                .headlineMedium,
-          ),
+          title: Text('Store', style: Theme.of(context).textTheme.headlineMedium,),
           actions: [
             TCartCounterIcon(onPressed: () {}, iconColor: Colors.white),
           ],
@@ -88,21 +84,14 @@ class StoreScreen extends StatelessWidget {
 
                 /// -- Tabs -- Tutorial [Section #3, Video #8]
                 bottom: TTabBar(
-                  tabs: [
-                    Tab(child: Text('Sports')),
-                    Tab(child: Text('Furniture')),
-                    Tab(child: Text('Electronics')),
-                    Tab(child: Text('Clothes')),
-                    Tab(child: Text('Cosmetics')),
-                  ],
+                  tabs: categories.map((category) => Tab(child: Text(category.name))).toList()),
                 ),
-              ),
             ];
           },
 
           /// -- Body -- Tutorial [Section #3, Video #8]
           body: TabBarView(
-            children: [TCategoryTab(), TCategoryTab(), TCategoryTab(), TCategoryTab(), TCategoryTab()],
+            children: categories.map((category) => TCategoryTab(category: category)).toList(),
           ),
         ),
       ),
