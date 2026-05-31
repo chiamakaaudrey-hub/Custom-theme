@@ -59,6 +59,10 @@ import 'dart:core';
     static String appleLogo = "assets/icons/brands/apple-logo.png";
     static String jordanLogo = "assets/icons/brands/jordan-logo.png";
     static String pumaLogo = "assets/icons/brands/puma-logo.png";
+    static String acerLogo = "assets/icons/brands/acer-logo.png";
+    static String kenwoodLogo = "assets/icons/brands/kenwood-logo.png";
+    static String ikeaLogo = "assets/icons/brands/ikea-logo.png";
+    static String zaraLogo = "assets/icons/brands/zara-logo.png";
 
     // --  Promo Banners
     static String promoBanner1 = "assets/images/banners/promo-banners-1.png";

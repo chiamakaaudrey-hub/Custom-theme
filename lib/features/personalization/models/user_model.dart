@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:t_store/utils/formatters/formatters.dart';
 
-import 'address_model.dart';
+import '../../shop/models/address_model.dart';
 
 /// Model class representing user data
 class UserModel {

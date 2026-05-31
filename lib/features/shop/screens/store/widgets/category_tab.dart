@@ -6,11 +6,13 @@ import 'package:t_store/features/shop/models/category_model.dart';
 import '../../../../../common/widgets/brands/brand_show_case.dart';
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
+import '../../../models/product_model.dart';
 
 class TCategoryTab extends StatelessWidget {
   const TCategoryTab({super.key, required this.category});
 
   final CategoryModel category;
+
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class TCategoryTab extends StatelessWidget {
             TSectionHeading(title: 'You might like', onPressed: (){}),
             SizedBox(height: TSizes.spaceBtwItems),
             
-            TGridLayout(itemCount: 4, itemBuilder: (_, index) => TProductCardVertical()),
+            TGridLayout(itemCount: 4, itemBuilder: (_, index) => TProductCardVertical(product: ProductModel.empty())),
             SizedBox(height: TSizes.spaceBtwSections),
           ],
         ),

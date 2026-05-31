@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../../features/shop/models/product_model.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../layout/grid_layout.dart';
 import '../product_cards/product_card_vertical.dart';
@@ -23,7 +24,7 @@ class TSortableProducts extends StatelessWidget {
         ),
         SizedBox(height: TSizes.spaceBtwSections),
         /// Products
-        TGridLayout(itemCount: 8, itemBuilder: (_, index) => TProductCardVertical()),
+        TGridLayout(itemCount: 8, itemBuilder: (_, index) => TProductCardVertical(product: ProductModel.empty())),
       ],
     );
   }

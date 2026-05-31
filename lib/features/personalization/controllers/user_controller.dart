@@ -76,7 +76,7 @@ class UserController extends GetxController {
             username: username,
             email: userCredentials.user!.email ?? '',
             phoneNumber: userCredentials.user!.phoneNumber ?? '',
-            profilePicture: userCredentials.user!.photoURL ?? '',
+            profilePicture: userCredentials.user!.photoURL ?? '', addresses: [],
           );
 
           // Save user data
