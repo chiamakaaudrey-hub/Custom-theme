@@ -15,15 +15,20 @@ class CategoryRepository extends GetxController {
   /// Get all Categories
   Future<List<CategoryModel>> getAllCategories() async {
     try {
+      print("i am hereeeeeeee");
       final snapshot = await _db.collection('Categories').get();
+      print("i reach here");
+      print(snapshot.docs);
       final list = snapshot.docs.map((document) => CategoryModel.fromSnapshot(document)).toList();
+      print("hereeeeeeeeeeeeeeeeeee");
+      print(list);
       return list;
     } on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw 'Something went wrong. Please try again $e';
     }
   }
 

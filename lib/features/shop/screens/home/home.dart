@@ -13,7 +13,8 @@ import '../../../../common/widgets/products/product_cards/product_card_vertical.
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
-import '../../controllers/product_controller.dart';
+import '../../controllers/product/product_controller.dart';
+import '../../models/product_model.dart';
 import 'widgets/home_appbar.dart';
 import 'widgets/home_categories.dart';
 

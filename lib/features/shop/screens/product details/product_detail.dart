@@ -13,6 +13,7 @@ import 'package:t_store/features/shop/screens/product%20reviews/product_reviews.
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
+import '../../../../utils/constants/enums.dart';
 import '../../models/product_model.dart';
 
 
@@ -23,14 +24,13 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
       bottomNavigationBar: TBottomAddToCart(),
       body: SingleChildScrollView(
         child: Column(
           children: [
             /// 1 - Product Image Slider
-            TProductImageSlider(),
+             TProductImageSlider(product: product),
 
             /// 2 - Product Details
             Padding(
@@ -41,11 +41,11 @@ class ProductDetailScreen extends StatelessWidget {
                     TRatingAndShare(),
 
                     /// -- Price, Title, Stock & Brand
-                    TProductMetaData(),
+                    TProductMetaData(product: product),
 
                     /// -- Attributes
-                    TProductAttributes(),
-                    SizedBox(height: TSizes.spaceBtwSections),
+                    if(product.productType == ProductType.variable.toString()) TProductAttributes(product: product,),
+                    if(product.productType == ProductType.variable.toString()) SizedBox(height: TSizes.spaceBtwSections),
 
                     /// -- Checkout Button
                     SizedBox(width: double.infinity, child: ElevatedButton(onPressed: (){}, child: Text('Checkout'))),
@@ -54,7 +54,7 @@ class ProductDetailScreen extends StatelessWidget {
                     /// -- Description
                     TSectionHeading(title: 'Description', showActionButton: false),
                     SizedBox(height: TSizes.spaceBtwItems),
-                    ReadMoreText('This is a product description for Blue Nike Sleeveless vest. There are more things that can be added but I will stop here',
+                    ReadMoreText(product.description ?? '',
                       trimLines: 2,
                       trimMode: TrimMode.Line,
                       trimCollapsedText: 'Show more',

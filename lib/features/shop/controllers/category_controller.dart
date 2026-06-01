@@ -14,6 +14,7 @@ class CategoryController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    fetchCategories();
   }
 
   /// -- Load category data
@@ -21,16 +22,20 @@ class CategoryController extends GetxController {
     try {
       // Show loader while loading categories
       isLoading.value = true;
+      print("heree1");
 
       // Fetch categories from data source (Firestore, API, etc.)
       final categories = await _categoryRepository.getAllCategories();
+      print("heree2");
 
       // Update the categories list
       allCategories.assignAll(categories);
+      print("heree3");
 
       // Filter featured categories
       featuredCategories.assignAll(allCategories.where((category) => category.isFeatured && category.parentId.isEmpty).take(8).toList());
 
+      print("heree4");
     } catch (e) {
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {

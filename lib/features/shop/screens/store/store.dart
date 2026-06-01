@@ -14,7 +14,7 @@ import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 import '../../../../common/widgets/appbar/appbar.dart';
 import '../../../../common/widgets/brands/brand_card.dart';
-import '../../controllers/product_controller.dart';
+import '../../controllers/product/product_controller.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
