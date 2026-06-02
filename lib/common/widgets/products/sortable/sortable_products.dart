@@ -27,7 +27,7 @@ class TSortableProducts extends StatelessWidget {
         /// Dropdown
         DropdownButtonFormField(
           decoration: InputDecoration(prefixIcon: Icon(Iconsax.sort)),
-          value: controller.selectedSortOption.value,
+          initialValue: controller.selectedSortOption.value,
           onChanged: (value){
             // Sort products based on the selected option
             controller.sortProducts(value!);

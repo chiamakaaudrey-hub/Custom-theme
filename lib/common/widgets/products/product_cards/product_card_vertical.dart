@@ -10,7 +10,6 @@ import 'package:t_store/features/shop/screens/product%20details/product_detail.d
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/enums.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
-import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../styles/shadows.dart';
 import '../../custom_shapes/containers/rounded_container.dart';
@@ -55,6 +54,7 @@ class TProductCardVertical extends StatelessWidget {
                     Center(child: TRoundedImage(imageUrl: product.thumbnail, applyImageRadius: true, borderRadius: TSizes.sm, isNetworkImage: true)),
       
                       /// -- Sale Tag
+                      if (salePercentage != null)
                       Positioned(
                         top: 12,
                         child: TRoundedContainer(

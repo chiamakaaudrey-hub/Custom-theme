@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart' show GetNavigation;
 import 'package:t_store/common/widgets/appbar/tabbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:t_store/common/widgets/layout/grid_layout.dart';
 import 'package:t_store/common/widgets/products/cart/cart_menu_icon.dart';
+import 'package:t_store/common/widgets/shimmers/brands_shimmer.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
+import 'package:t_store/features/shop/controllers/brand_controller.dart';
 import 'package:t_store/features/shop/controllers/category_controller.dart';
-import 'package:t_store/features/shop/models/product_model.dart';
+import 'package:t_store/features/shop/screens/brand/all_brands.dart';
+import 'package:t_store/features/shop/screens/brand/brand_products.dart';
 import 'package:t_store/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -21,8 +25,11 @@ class StoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final brandController = Get.put(BrandController());
     final categories = CategoryController.instance.featuredCategories;
     final controller = ProductController.instance;
+
     return DefaultTabController(
       length: categories.length,
       child: Scaffold(
@@ -38,13 +45,12 @@ class StoreScreen extends StatelessWidget {
           headerSliverBuilder: (_, innerBoxIsScrolled) {
             return [
               SliverAppBar(
-                automaticallyImplyLeading: false,
                 pinned: true,
                 floating: true,
-                backgroundColor: THelperFunctions.isDarkMode(context)
-                    ? TColors.black
-                    : TColors.white,
                 expandedHeight: 440,
+                // Space between Appbar and TabBar
+                automaticallyImplyLeading: false,
+                backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.black : TColors.white,
 
                 flexibleSpace: Padding(
                   padding: EdgeInsets.all(TSizes.defaultSpace),
@@ -52,35 +58,34 @@ class StoreScreen extends StatelessWidget {
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     children: [
-
                       /// -- Search Bar
                       SizedBox(height: TSizes.spaceBtwItems),
-                      TSearchContainer(
-                        text: 'Search in Store',
-                        padding: EdgeInsets.symmetric(
-                          horizontal: TSizes.defaultSpace,
-                        ),
-                        showBorder: true,
-                        showBackground: false,
-                      ),
+                      TSearchContainer(text: 'Search in Store', padding: EdgeInsets.zero, showBorder: true, showBackground: false),
                       SizedBox(height: TSizes.spaceBtwSections),
 
                       /// -- Featured Brands
-                      TSectionHeading(
-                        title: 'Featured Brands',
-                        showActionButton: true,
-                        onPressed: () => Get.to(()  => TBrandCard(showBorder: true)),
-                      ),
+                      TSectionHeading(title: 'Featured Brands', showActionButton: true, onPressed: () => Get.to(()  => AllBrandsScreen())),
                       SizedBox(height: TSizes.spaceBtwItems / 1.5),
 
                       /// Brands GRID
-                      TGridLayout(
-                        itemCount: 4,
-                        mainAxisExtent: 80,
-                        itemBuilder: (_, index) {
-                          return TBrandCard(showBorder: true);
-                        },
-                      ),
+                      Obx(() {
+                        if (brandController.isLoading.value) return TBrandsShimmer();
+
+                        if (brandController.featuredBrands.isEmpty) {
+                          return Center(
+                            child: Text('No Data Found!', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
+                        }
+
+                        return TGridLayout(
+                          itemCount: brandController.featuredBrands.length,
+                          mainAxisExtent: 80,
+                          itemBuilder: (_, index) {
+                            final brand = brandController.featuredBrands[index];
+
+                            return  TBrandCard(showBorder: true, brand: brand, onTap: () => Get.to(() => BrandProducts(brand: brand)));
+                          },
+                        );
+                      }),
                     ],
                   ),
                 ),

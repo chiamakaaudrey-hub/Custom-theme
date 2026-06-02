@@ -23,7 +23,7 @@ class ProductVariationModel {
   static ProductVariationModel empty() => ProductVariationModel(id: '', attributeValues: {});
 
   /// Json Format
-  toJson() {
+  Map<String, Object?> toJson() {
     return {
       'Id': id,
       'Image': image,

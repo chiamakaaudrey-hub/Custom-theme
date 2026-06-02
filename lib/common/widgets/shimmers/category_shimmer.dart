@@ -15,8 +15,8 @@ class TCategoryShimmer extends StatelessWidget {
         shrinkWrap: true,
         itemCount: itemCount,
         scrollDirection: Axis.horizontal,
-        separatorBuilder: (_, __) => SizedBox(width: TSizes.spaceBtwItems),
-        itemBuilder: (_, __) {
+        separatorBuilder: (_, _) => SizedBox(width: TSizes.spaceBtwItems),
+        itemBuilder: (_, _) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

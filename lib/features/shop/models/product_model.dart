@@ -45,7 +45,7 @@ class ProductModel {
       ProductModel(id: '', title: '', stock: 0, price: 0, thumbnail: '', productType: '');
 
   /// Json Format
-  toJson() {
+  Map<String, Object?> toJson() {
     return {
       'SKU': sku,
       'Title': title,

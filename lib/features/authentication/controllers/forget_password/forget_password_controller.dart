@@ -1,9 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/src/extension_instance.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:t_store/data/repositories/authentication/authentication_repository.dart';
 import 'package:t_store/features/authentication/screens/password_configuration/reset_password.dart';
 import 'package:t_store/utils/helpers/network_manager.dart';
@@ -18,7 +14,7 @@ class ForgetPasswordController extends GetxController {
   GlobalKey<FormState> forgetPasswordFormKey = GlobalKey<FormState>();
 
   /// Send Reset Password Email
-  sendPasswordResetEmail() async {
+  Future<void> sendPasswordResetEmail() async {
     try {
       // Start Loading
       TFullScreenLoader.openLoadingDialog('Processing your request', 'assets/images/animations/animation_of_docer.json');
@@ -49,7 +45,7 @@ class ForgetPasswordController extends GetxController {
     }
   }
 
-  resendPasswordResetEmail(String email) async {
+  Future<void> resendPasswordResetEmail(String email) async {
     try {
       // Start Loading
       TFullScreenLoader.openLoadingDialog('Processing your request', 'assets/images/animations/animation_of_docer.json');

@@ -2,7 +2,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:t_store/common/widgets/shimmers/shimmer.dart';
-import 'package:t_store/features/shop/controllers/home_controller.dart';
 
 import '../../../../../common/widgets/custom_shapes/containers/circular_container.dart';
 import '../../../../../common/widgets/images/t_rounded_image.dart';
@@ -19,8 +18,9 @@ class TPromoSlider extends StatelessWidget {
 
     return Obx(() {
       // Loader
-      if (controller.isLoading.value)
+      if (controller.isLoading.value) {
         return TShimmerEffect(width: double.infinity, height: 190);
+      }
 
       // No data found
       if (controller.banners.isEmpty) {

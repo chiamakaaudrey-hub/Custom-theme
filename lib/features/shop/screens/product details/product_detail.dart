@@ -11,7 +11,6 @@ import 'package:t_store/features/shop/screens/product%20details/widgets/product_
 import 'package:t_store/features/shop/screens/product%20details/widgets/rating_share_widget.dart';
 import 'package:t_store/features/shop/screens/product%20reviews/product_reviews.dart';
 import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../../utils/constants/enums.dart';
 import '../../models/product_model.dart';

@@ -9,7 +9,6 @@ import 'package:t_store/features/shop/screens/checkout/widgets/billing_amount_se
 import 'package:t_store/features/shop/screens/checkout/widgets/billing_payment_section.dart';
 import 'package:t_store/navigation_menu.dart';
 import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 import '../../../../common/widgets/appbar/appbar.dart';
