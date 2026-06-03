@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_store/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:t_store/features/shop/controllers/product/images_controller.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 import '../../../../../common/widgets/appbar/appbar.dart';
@@ -80,7 +81,7 @@ class TProductImageSlider extends StatelessWidget {
             /// Appbar Icons
             TAppBar(
               showBackArrow: true,
-              actions: [TCircularIcon(icon: Iconsax.heart5, color: Colors.red)],
+              actions: [TFavouriteIcon(productId: product.id,)],
             )
           ],
         ),

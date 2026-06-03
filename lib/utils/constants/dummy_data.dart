@@ -14,24 +14,13 @@ import 'image_strings.dart';
 class TDummyData {
   /// -- Banners
   static final List<BannerModel> banners = [
-    BannerModel(
-        imageUrl: TImages.banner1, targetScreen: TRoutes.order, active: false),
-    BannerModel(
-        imageUrl: TImages.banner2, targetScreen: TRoutes.cart, active: true),
-    BannerModel(imageUrl: TImages.banner3,
-        targetScreen: TRoutes.favourites,
-        active: true),
-    BannerModel(
-        imageUrl: TImages.banner4, targetScreen: TRoutes.search, active: true),
-    BannerModel(imageUrl: TImages.banner5,
-        targetScreen: TRoutes.settings,
-        active: true),
-    BannerModel(imageUrl: TImages.banner6,
-        targetScreen: TRoutes.userAddress,
-        active: true),
-    BannerModel(imageUrl: TImages.banner8,
-        targetScreen: TRoutes.checkout,
-        active: false),
+    BannerModel(imageUrl: TImages.banner1, targetScreen: TRoutes.order, active: false),
+    BannerModel(imageUrl: TImages.banner2, targetScreen: TRoutes.cart, active: true),
+    BannerModel(imageUrl: TImages.banner3, targetScreen: TRoutes.favourites, active: true),
+    BannerModel(imageUrl: TImages.banner4, targetScreen: TRoutes.search, active: true),
+    BannerModel(imageUrl: TImages.banner5, targetScreen: TRoutes.settings, active: true),
+    BannerModel(imageUrl: TImages.banner6, targetScreen: TRoutes.userAddress, active: true),
+    BannerModel(imageUrl: TImages.banner8, targetScreen: TRoutes.checkout, active: false),
   ];
 
   /// -- User
@@ -273,13 +262,14 @@ class TDummyData {
       isFeatured: true,
       thumbnail: TImages.productImage40,
       description: 'Blue T-Shirt for all ages',
-      brand: BrandModel(id: '', name: '', image: '', isFeatured: true, productsCount: 1),
+      brand: BrandModel(id: '6', name: 'ZARA', image: TImages.zaraLogo, isFeatured: true, productsCount: 1),
       images: [],
       salePrice: 30,
       sku:'ABR4568',
       categoryId: '3',
       productAttributes: [
         ProductAttributeModel(name: 'Color', values: ['Green', 'Red', 'Blue']),
+        ProductAttributeModel(name: 'Size', values: ['EU 30', 'EU 32', 'EU 34']),
       ],
       productType: 'ProductType.single',
   ),

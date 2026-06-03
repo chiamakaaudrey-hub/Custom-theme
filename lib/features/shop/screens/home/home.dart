@@ -40,7 +40,6 @@ class HomeScreen extends StatelessWidget {
                     Padding(padding: EdgeInsets.only(left: TSizes.defaultSpace),
                       child: Column(
                         children: [
-
                           /// -- Heading
                         TSectionHeading(title: 'Popular Categories', showActionButton: false, textColor: Colors.white),
                           SizedBox(height: TSizes.spaceBtwItems),
@@ -64,11 +63,7 @@ class HomeScreen extends StatelessWidget {
                 /// -- Heading
                 TSectionHeading(
                     title: 'Popular Products',
-                    onPressed: () => Get.to(() =>
-                        AllProducts(
-                            title: 'Popular Products',
-                          futureMethod: controller.fetchAllFeaturedProducts(),
-                        ),
+                    onPressed: () => Get.to(() => AllProducts(title: 'Popular Products', futureMethod: controller.fetchAllFeaturedProducts()),
                     ),
                 ),
                 SizedBox(height: TSizes.spaceBtwItems),

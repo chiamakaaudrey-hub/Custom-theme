@@ -7,6 +7,7 @@ import 'package:t_store/data/repositories/user/user_repository.dart';
 import 'package:t_store/features/authentication/screens/login/login.dart';
 import 'package:t_store/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:t_store/navigation_menu.dart';
+import 'package:t_store/utils/local_storage/storage_utility.dart';
 import '../../../features/authentication/screens/signup/verify_email.dart';
 import '../../../utils/exceptions/firebase_auth_exceptions.dart';
 import '../../../utils/exceptions/firebase_exceptions.dart';
@@ -38,6 +39,10 @@ class AuthenticationRepository extends GetxController {
     final user = _auth.currentUser;
     if (user != null) {
       if (user.emailVerified) {
+
+        // Initialize User Specific Storage
+        await TLocalStorage.init(user.uid);
+
         // If the user's email is verified, navigate to the main Navigation Menu
         Get.offAll(() => NavigationMenu());
         // If the user's email is not verified, navigate to the VerifyEmailScreen
