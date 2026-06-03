@@ -97,7 +97,7 @@ class TProductCardVertical extends StatelessWidget {
             // Use Spacer() to utilize all the space to set the price and the cart button at the bottom
             // This usually happens when Product title is in single line or 2 lines (Max)
             Spacer(),
-        /// Price Row
+            /// Price Row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
