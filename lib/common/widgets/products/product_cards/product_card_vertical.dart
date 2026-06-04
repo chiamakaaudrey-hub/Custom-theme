@@ -106,6 +106,7 @@ class TProductCardVertical extends StatelessWidget {
                   child: Column(
                     children: [
                       if (product.productType == ProductType.single.toString() && product.salePrice > 0)
+                      if (1 > 0)
                         Padding(
                           padding: EdgeInsets.only(left: TSizes.sm),
                           child: Text(

@@ -42,7 +42,9 @@ class ProductModel {
 
   /// Create Empty func for clean code
   static ProductModel empty() =>
-      ProductModel(id: '', title: '', stock: 0, price: 0, thumbnail: '', productType: '');
+      ProductModel(id: '', title: '', stock: 0, price: 0, thumbnail: '',
+          productType: ''
+      );
 
   /// Json Format
   Map<String, Object?> toJson() {
@@ -61,6 +63,8 @@ class ProductModel {
       'ProductType': productType,
       'ProductAttributes': productAttributes != null ? productAttributes!.map((e) => e.toJson()).toList() : [],
       'ProductVariations': productVariations != null ? productVariations!.map((e) => e.toJson()).toList() : [],
+      // 'ProductAttributes': productAttributes != [] ? productAttributes!.map((e) => e.toJson()).toList() : [],
+      // 'ProductVariations': productVariations != [] ? productVariations!.map((e) => e.toJson()).toList() : [],
     };
   }
 
@@ -82,8 +86,10 @@ class ProductModel {
       productType: data['ProductType'] ?? '',
       brand: BrandModel.fromJson(data['Brand']),
       images: data['Images'] != null ? List<String>.from(data['Images']) : [],
-      productAttributes: (data['ProductAttributes'] as List<dynamic>).map((e) => ProductAttributeModel.fromJson(e)).toList(),
-      productVariations: (data['ProductVariations'] as List<dynamic>).map((e) => ProductVariationModel.fromJson(e)).toList(),
+      //productAttributes: (data['ProductAttributes'] as List<dynamic>).map((e) => ProductAttributeModel.fromJson(e)).toList(),
+      //productVariations: (data['ProductVariations'] as List<dynamic>).map((e) => ProductVariationModel.fromJson(e)).toList(),
+      productAttributes: (data['ProductAttributes'] as List<dynamic>? ?? []).map((e) => ProductAttributeModel.fromJson(e)).toList(),
+      productVariations: (data['ProductVariations'] as List<dynamic>? ?? []).map((e) => ProductVariationModel.fromJson(e)).toList(),
     );
   }
   /// Map Json oriented document snapshot from Firebase to Model

@@ -43,7 +43,7 @@ class TDummyData {
         ),
         AddressModel(
           id: '6',
-          name: 'John Doe',
+          name: 'Audrey',
             phoneNumber: '1234567890',
             street: 'Akokwa',
             city: 'Imo',

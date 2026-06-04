@@ -16,7 +16,7 @@ class FavouritesController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    initFavorites();
+    // initFavorites();
   }
 
   // Method to initialize favorites by reading from storage

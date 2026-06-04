@@ -25,7 +25,7 @@ class ProductRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again.';
+      throw 'Something went wrong. Please try again. $e';
     }
   }
 
@@ -150,7 +150,7 @@ class ProductRepository extends GetxController {
           product.images!.addAll(imageUrl);
         }
 
-        // Upload Variation Images
+        //Upload Variation Images
         if (product.productType == ProductType.variable.toString()) {
           for (var variation in product.productVariations!) {
             // Get image data link from local assets

@@ -22,8 +22,8 @@ class FavouriteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(FavouritesController());
-    //final controller = FavouritesController.instance;
+    // final controller = Get.put(FavouritesController());
+    final controller = FavouritesController.instance;
     return Scaffold(
       /// Custom AppBar
       appBar: TAppBar(

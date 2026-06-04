@@ -46,16 +46,17 @@ class TProductAttributes extends StatelessWidget {
                         Row(
                           children: [
                             TProductTitleText(title: 'Price : ', smallSize: true),
-      
+
                             /// Actual Price
                             if (controller.selectedVariation.value.salePrice > 0)
                             Text('\$${controller.selectedVariation.value.price}',
                               style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),
                             ),
                             SizedBox(width: TSizes.spaceBtwItems),
-      
+
                             /// Sale Price
                             TProductPriceText(price: controller.getVariationPrice()),
+
                           ],
                         ),
                         /// Stock
@@ -63,22 +64,24 @@ class TProductAttributes extends StatelessWidget {
                           children: [
                             TProductTitleText(title: 'Stock : ', smallSize: true),
                             Text(controller.variationStockStatus.value, style: Theme.of(context).textTheme.titleMedium),
+                            Text("", style: Theme.of(context).textTheme.titleMedium),
                           ],
-                        )
-                      ],
+                        // ),
+                      // ],
                     ),
                   ],
                 ),
                 /// Variation Description
                 TProductTitleText(
                     title: controller.selectedVariation.value.description ?? '', smallSize: true, maxLines: 4),
+
               ],
             ),
-          ),
+          // ),
           SizedBox(height: TSizes.spaceBtwItems),
-      
+
           /// -- Attributes
-          Column(
+            Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: product.productAttributes!.map((attribute) => Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,13 +94,13 @@ class TProductAttributes extends StatelessWidget {
                   children: attribute.values!.map((attributeValue) {
                     final isSelected = controller.selectedAttributes[attribute.name] == attributeValue;
                     final available = controller.getAttributesAvailabilityInVariation(product.productVariations!, attribute.name!).contains(attributeValue);
-      
+
                     return TChoiceChip(
                         text: attributeValue,
                         selected: isSelected,
                         onSelected: available ? (selected) {
                       if (selected && available) {
-                        controller.onAttributeSelected(product, attribute.name ?? '', attributeValue);
+                       controller.onAttributeSelected(product, attribute.name ?? '', attributeValue);
                       }
                     } : null);
                   }).toList(),
@@ -108,7 +111,10 @@ class TProductAttributes extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ),
+    ],
+        ),
+        );
   }
 }
 

@@ -66,7 +66,7 @@ static void errorSnackBar({required title, message = ''}) {
     colorText: TColors.white,
     backgroundColor: Colors.green,
     snackPosition: SnackPosition.BOTTOM,
-    duration: Duration(seconds: 3),
+    duration: Duration(seconds: 10),
     margin: EdgeInsets.all(20),
     icon: Icon(Iconsax.warning_2, color: TColors.white),
   );

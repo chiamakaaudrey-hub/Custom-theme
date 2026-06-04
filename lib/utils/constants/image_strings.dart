@@ -30,7 +30,7 @@ import 'dart:core';
     static String packageAnimation = "assets/images/animations/packaging_in_progress.json";
     static String paperPlaneAnimation = "assets/images/animations/Paper_plane.json";
     static String carAnimation = "assets/images/animations/car_delivery.json";
-    static String pencilAnimation = "";
+    static String pencilAnimation = "assets/images/animations/animation_of_docer.json";
     static String docerAnimation = "assets/images/animations/animation_of_docer.json";
     static String searchAnimation = "assets/images/animations/searching.json";
     static String emptyAnimation = "assets/images/animations/searching.json";
@@ -38,9 +38,9 @@ import 'dart:core';
     static String successfullyRegisterAnimation = "assets/images/animations/payment_successful.json";
     static String thankYouAnimation = "assets/images/animations/thank_you!.json";
     static String paymentSuccessfulAnimation = "assets/images/animations/payment_successful.json";
-    static String loadingJuggleAnimation = "";
-    static String cloudUploadAnimation = "";
-    static String loaderAnimation = "";
+    static String loadingJuggleAnimation = "assets/images/animations/animation_of_docer.json";
+    static String cloudUploadAnimation = "assets/images/animations/animation_of_docer.json";
+    static String loaderAnimation = "assets/images/animations/animation_of_docer.json";
 
     // -- Category Icons
     static String sportIcon = "assets/icons/categories/icons8-bowling-64.png";

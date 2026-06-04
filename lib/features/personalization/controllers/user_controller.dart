@@ -17,9 +17,7 @@ class UserController extends GetxController {
   static UserController get instance => Get.find();
 
   final profileLoading = false.obs;
-  Rx<UserModel> user = UserModel
-      .empty()
-      .obs;
+  Rx<UserModel> user = UserModel.empty().obs;
 
   final hidePassword = false.obs;
   final imageUploading = false.obs;
@@ -67,9 +65,7 @@ class UserController extends GetxController {
           final user = UserModel(
             id: userCredentials.user!.uid,
             firstName: nameParts[0],
-            lastName: nameParts.length > 1
-                ? nameParts.sublist(1).join(' ')
-                : '',
+            lastName: nameParts.length > 1 ? nameParts.sublist(1).join(' ') : '',
             username: username,
             email: userCredentials.user!.email ?? '',
             phoneNumber: userCredentials.user!.phoneNumber ?? '',
