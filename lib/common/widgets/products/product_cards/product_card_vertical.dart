@@ -16,6 +16,7 @@ import '../../../styles/shadows.dart';
 import '../../custom_shapes/containers/rounded_container.dart';
 import '../../icons/t_circular_icon.dart';
 import '../../texts/product_price_text.dart';
+import '../cart/add_to_cart_button.dart';
 
 class TProductCardVertical extends StatelessWidget {
   const TProductCardVertical({super.key, required this.product});
@@ -104,9 +105,9 @@ class TProductCardVertical extends StatelessWidget {
                 /// Price
                 Flexible(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       if (product.productType == ProductType.single.toString() && product.salePrice > 0)
-                      if (1 > 0)
                         Padding(
                           padding: EdgeInsets.only(left: TSizes.sm),
                           child: Text(
@@ -125,21 +126,7 @@ class TProductCardVertical extends StatelessWidget {
                 ),
 
                 /// Add to Cart Button
-                Container(
-                  decoration: BoxDecoration(
-                    color: TColors.dark,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(TSizes.cardRadiusMd),
-                      bottomRight: Radius.circular(TSizes.productImageRadius),
-                    ),
-                  ),
-                  child: SizedBox(
-                      width: TSizes.iconLg * 1.2,
-                      height: TSizes.iconLg * 1.2,
-                      child: Center(
-                          child: Icon(Iconsax.add, color: TColors.white)),
-                  ),
-                ),
+               ProductCardAddToCartButton(product: product),
               ],
             ),
           ]),

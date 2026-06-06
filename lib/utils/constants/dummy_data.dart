@@ -1,10 +1,12 @@
 import 'package:t_store/features/personalization/models/user_model.dart';
+import 'package:t_store/features/shop/models/cart_item_model.dart';
 import 'package:t_store/features/shop/models/category_model.dart';
 import 'package:t_store/routes/routes.dart';
 import '../../features/shop/models/address_model.dart';
 import '../../features/shop/models/banner_model.dart';
 import '../../features/shop/models/brand_category_model.dart';
 import '../../features/shop/models/brand_model.dart';
+import '../../features/shop/models/cart_model.dart';
 import '../../features/shop/models/product_attribute_model.dart';
 import '../../features/shop/models/product_category_model.dart';
 import '../../features/shop/models/product_model.dart';
@@ -55,6 +57,32 @@ class TDummyData {
   );
 
   /// -- Cart
+  // static final CartItemModel cart = CartModel(
+  //   cartId : '001',
+  //   items: [
+  //     CartItemModel(
+  //         productId: '001',
+  //         variationId: '1',
+  //         quantity: 1,
+  //         title: products[0].title,
+  //         image: products[0].thumbnail,
+  //         brandName: products[0].brand!.name,
+  //         price: products[0].productVariations![0].price,
+  //         selectedVariation: products[0].productVariations![0].attributeValues,
+  //     ),
+  //     CartItemModel(
+  //       productId: '002',
+  //       variationId: '',
+  //       quantity: 1,
+  //       title: products[1].title,
+  //       image: products[1].thumbnail,
+  //       brandName: products[1].brand!.name,
+  //       price: products[1].productVariations![0].price,
+  //       selectedVariation: products[1].productVariations![0].attributeValues,
+  //
+  //     ),
+  //   ]
+  // );
 
   /// -- Order
 

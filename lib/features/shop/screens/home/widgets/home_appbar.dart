@@ -32,7 +32,9 @@ class TAppHomeBar extends StatelessWidget {
         ),
       ],
     ),
-      actions: [TCartCounterIcon(onPressed: () {}, iconColor: TColors.white)],
+      actions: [
+        TCartCounterIcon(iconColor: TColors.white, counterBgColor: TColors.black, counterTextColor: TColors.white),
+      ],
     );
   }
 }
