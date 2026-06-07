@@ -13,12 +13,15 @@ class AddressRepository extends GetxController {
       final userId = AuthenticationRepository.instance.authUser!.uid;
       if (userId.isEmpty) throw 'Unable to find user information. Try again in few minutes.';
 
-      final result = await _db.collection('Users').doc(userId).collection('Addresses').get();
-      return result.docs.map((documentSnapShot) => AddressModel.fromDocumentSnapshot(documentSnapShot)).toList();
+      final result = await _db.collection('Users').doc(userId).collection(
+          'Addresses').get();
+      return result.docs.map((documentSnapShot) =>
+          AddressModel.fromDocumentSnapshot(documentSnapShot)).toList();
 
-    } catch (e) {
-      throw 'Something went wrong while fetching Address Information. Try again later';
-    }
+      } catch (e) {
+        throw 'Something went wrong while fetching Address Information. Try again later';
+      }
+
   }
 
   /// Clear the "selected" field for all addresses

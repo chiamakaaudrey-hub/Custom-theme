@@ -6,9 +6,9 @@ import '../../../utils/constants/sizes.dart';
 import '../../../utils/constants/text_strings.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key, required this.title,  required this.subTitle, required this.onPressed});
+  const SuccessScreen({super.key, required this.title,  required this.subTitle, required this.onPressed, required this.image});
 
-  final String title, subTitle;
+  final String title, subTitle, image;
   final VoidCallback onPressed;
 
   @override

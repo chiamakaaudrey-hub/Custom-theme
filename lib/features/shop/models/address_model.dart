@@ -74,6 +74,7 @@ class AddressModel {
   }
 
   /// Create Address from Firestore Document
+  /// Factory constructor to create an AddressModel from a DocumentSnapshot
   factory AddressModel.fromDocumentSnapshot(DocumentSnapshot snapshot) {
     final data = snapshot.data() as Map<String, dynamic>;
 
